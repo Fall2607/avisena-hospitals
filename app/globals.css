@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  /* 1. Mendaftarkan Font dari layout.tsx */
+  /* Kita menimpa default 'font-sans' dengan variable --font-inter */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, Cambria, serif;
+
+  /* 2. Mendaftarkan Warna Custom Avisena */
+  /* Ini otomatis membuat class seperti bg-avisena-500, text-avisena-900 */
+  --color-avisena-50: #f0f9ff;
+  --color-avisena-100: #e0f2fe;
+  --color-avisena-400: #38bdf8;
+  --color-avisena-500: #0ea5e9; /* Warna Utama */
+  --color-avisena-600: #0284c7;
+  --color-avisena-800: #075985;
+  --color-avisena-900: #0c4a6e;
+}
+
+/* Konfigurasi Next.js Default (Dark Mode support) */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans); /* Menggunakan Inter sebagai default */
+}
