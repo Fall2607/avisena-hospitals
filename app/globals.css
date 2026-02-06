@@ -1,37 +1,52 @@
 @import "tailwindcss";
 
 @theme {
-  /* 1. Mendaftarkan Font dari layout.tsx */
-  /* Kita menimpa default 'font-sans' dengan variable --font-inter */
+  /* Font Setup */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-playfair), ui-serif, Georgia, Cambria, serif;
 
-  /* 2. Mendaftarkan Warna Custom Avisena */
-  /* Ini otomatis membuat class seperti bg-avisena-500, text-avisena-900 */
-  --color-avisena-50: #f0f9ff;
-  --color-avisena-100: #e0f2fe;
-  --color-avisena-400: #38bdf8;
-  --color-avisena-500: #0ea5e9; /* Warna Utama */
-  --color-avisena-600: #0284c7;
-  --color-avisena-800: #075985;
-  --color-avisena-900: #0c4a6e;
+  /* --- NEW COLOR PALETTE AVISENA --- */
+
+  /* Foundation Cream: Untuk background halaman yang lembut */
+  --color-avisena-50: #efefef;
+
+  /* Variasi Cream/Slate: Untuk background secondary */
+  --color-avisena-100: #e5e7eb;
+
+  /* Wisdom Slate: Untuk aksen border atau teks secondary */
+  --color-avisena-400: #a4b6b8;
+
+  /* Avisena Emerald: PRIMARY COLOR (Tombol, Icon Utama) */
+  --color-avisena-500: #21af89;
+
+  /* Emerald Darker: Untuk efek Hover pada tombol (dibuat sedikit lebih gelap dari Emerald) */
+  --color-avisena-600: #1a8f70;
+
+  /* Knowledge Blue: Untuk elemen card atau footer accent */
+  --color-avisena-800: #1f4488;
+
+  /* Wisdom Navy: Untuk background gelap, footer utama, dan teks judul */
+  --color-avisena-900: #152c58;
 }
 
-/* Konfigurasi Next.js Default (Dark Mode support) */
+/* Konfigurasi Root */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Menggunakan Foundation Cream sebagai background default */
+  --background: #efefef;
+  /* Menggunakan Wisdom Navy sebagai warna teks utama agar kontrasnya bagus */
+  --foreground: #152c58;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Mode gelap menggunakan Wisdom Navy sebagai base */
+    --background: #152c58;
+    --foreground: #efefef;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans); /* Menggunakan Inter sebagai default */
+  font-family: var(--font-sans);
 }
