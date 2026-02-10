@@ -424,7 +424,8 @@ export default function Home() {
 
           <div className="flex items-center space-x-6">
             <a
-              href="#"
+              href="https://www.linkedin.com/company/avisena-hospital-group"
+              target="_blank"
               className="group relative text-slate-400 hover:text-white transition duration-300"
               aria-label="LinkedIn"
             >
@@ -432,7 +433,8 @@ export default function Home() {
             </a>
 
             <a
-              href="#"
+              href="https://www.instagram.com/rsuavisena/"
+              target="_blank"
               className="group relative text-slate-400 hover:text-white transition duration-300"
               aria-label="Instagram"
             >
