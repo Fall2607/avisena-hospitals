@@ -1,52 +1,78 @@
 @import "tailwindcss";
 
-@theme {
-  /* Font Setup */
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-playfair), ui-serif, Georgia, Cambria, serif;
-
-  /* --- NEW COLOR PALETTE AVISENA --- */
-
-  /* Foundation Cream: Untuk background halaman yang lembut */
-  --color-avisena-50: #efefef;
-
-  /* Variasi Cream/Slate: Untuk background secondary */
-  --color-avisena-100: #e5e7eb;
-
-  /* Wisdom Slate: Untuk aksen border atau teks secondary */
-  --color-avisena-400: #a4b6b8;
-
-  /* Avisena Emerald: PRIMARY COLOR (Tombol, Icon Utama) */
-  --color-avisena-500: #21af89;
-
-  /* Emerald Darker: Untuk efek Hover pada tombol (dibuat sedikit lebih gelap dari Emerald) */
-  --color-avisena-600: #1a8f70;
-
-  /* Knowledge Blue: Untuk elemen card atau footer accent */
-  --color-avisena-800: #1f4488;
-
-  /* Wisdom Navy: Untuk background gelap, footer utama, dan teks judul */
-  --color-avisena-900: #152c58;
-}
-
-/* Konfigurasi Root */
 :root {
-  /* Menggunakan Foundation Cream sebagai background default */
-  --background: #efefef;
-  /* Menggunakan Wisdom Navy sebagai warna teks utama agar kontrasnya bagus */
-  --foreground: #152c58;
+  /* Primary Colors (Visual Identity Guidelines 2026) */
+  --avisena-tosca: #00A79C;       /* RGB: 0, 167, 156 - Tenang, menyembuhkan, ramah, modern (Dominan/Brand) */
+  --avisena-blue: #154C96;        /* RGB: 21, 76, 150 - Profesional, terpercaya, stabil (Background kuat/Header/Footer) */
+  --avisena-orange: #F69320;      /* RGB: 246, 147, 32 - Hangat, optimis, energi positif (Gunakan untuk CTA, Aksen, Highlight) */
+
+  /* Secondary / Neutral Colors */
+  --avisena-dark-navy: #10162C;   /* RGB: 16, 22, 44 - Untuk warna teks utama (Body/Heading) pengganti hitam pekat */
+  --avisena-grey: #B2B5B3;        /* RGB: 178, 181, 179 - Untuk border, sub-teks sekunder, atau disabled state */
+  --avisena-light-bg: #E0E4E9;    /* RGB: 224, 228, 233 - Untuk background section alternatif / card surface */
+  --avisena-white: #FFFFFF;       /* Background utama agar tetap bersih dan higienis */
+
+  /* Tints Opacity Scale (80%, 50%, 15% sesuai guideline) */
+  --avisena-tosca-80: rgba(0, 167, 156, 0.8);
+  --avisena-tosca-50: rgba(0, 167, 156, 0.5);
+  --avisena-tosca-15: rgba(0, 167, 156, 0.15);
+
+  --avisena-blue-80: rgba(21, 76, 150, 0.8);
+  --avisena-blue-50: rgba(21, 76, 150, 0.5);
+  --avisena-blue-15: rgba(21, 76, 150, 0.15);
+
+  --avisena-orange-80: rgba(246, 147, 32, 0.8);
+  --avisena-orange-50: rgba(246, 147, 32, 0.5);
+  --avisena-orange-15: rgba(246, 147, 32, 0.15);
+
+  --background: var(--avisena-white);
+  --foreground: var(--avisena-dark-navy);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Mode gelap menggunakan Wisdom Navy sebagai base */
-    --background: #152c58;
-    --foreground: #efefef;
-  }
+@theme {
+  /* Single Official Typeface: Kanit */
+  --font-sans: "Kanit", ui-sans-serif, system-ui, sans-serif;
+
+  /* Official Brand Color Tokens */
+  --color-avisena-tosca: #00A79C;
+  --color-avisena-blue: #154C96;
+  --color-avisena-orange: #F69320;
+  --color-avisena-navy: #10162C;
+  --color-avisena-grey: #B2B5B3;
+  --color-avisena-light: #E0E4E9;
+  --color-avisena-white: #FFFFFF;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+/* Simpul Kepedulian Frame Shapes (Rounded & Teardrop Leaf Corners) */
+.simpul-frame {
+  border-radius: 56px 20px 56px 20px;
+}
+
+.simpul-frame-reverse {
+  border-radius: 20px 56px 20px 56px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E0E4E9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00A79C;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #154C96;
 }
