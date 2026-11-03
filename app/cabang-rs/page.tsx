@@ -33,8 +33,8 @@ export default function CabangRsPage() {
 
   return (
     <div className="bg-white">
-      {/* 1. Light & Warm Header Khusus Jaringan Cabang RS */}
-      <section className="relative bg-gradient-to-br from-[#FFFFFF] via-[#E0E4E9]/40 to-[rgba(0,167,156,0.12)] pt-10 pb-14 lg:pt-14 lg:pb-16 border-b border-[#E0E4E9] overflow-hidden">
+      {/* 1. Warm Header Khusus Jaringan Cabang RS (Solid flat surface) */}
+      <section className="relative bg-[#E0E4E9]/35 pt-10 pb-14 lg:pt-14 lg:pb-16 overflow-hidden">
         <SimpulSupergraphic
           variant="outline-tosca"
           opacity={0.1}
@@ -44,7 +44,7 @@ export default function CabangRsPage() {
           <nav className="flex items-center gap-2 text-xs font-light text-[#10162C]/65 mb-5">
             <Link
               href="/"
-              className="inline-flex items-center gap-1.5 hover:text-[#00A79C] transition-colors"
+              className="inline-flex items-center gap-1.5 hover:text-[#00A79C] transition-colors duration-200"
             >
               <FaHouse className="text-[11px]" />
               <span>{lang === "id" ? "Beranda" : "Home"}</span>
@@ -57,17 +57,17 @@ export default function CabangRsPage() {
 
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <div className="space-y-3 max-w-3xl">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-[#00A79C] text-white text-xs font-medium uppercase tracking-wider">
+              <span className="inline-block px-3.5 py-1 rounded-full bg-[#00A79C] text-white text-xs font-medium">
                 {lang === "id"
                   ? "Jaringan Rumah Sakit Avisena • Jawa Barat"
                   : "Avisena Hospital Network • West Java"}
               </span>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#10162C] leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#10162C] leading-tight text-balance">
                 {lang === "id"
                   ? "Eksplorasi Lokasi, Poliklinik & Fasilitas 5 Cabang RS Avisena"
                   : "Explore Locations, Polyclinics & Facilities Across Our 5 Hospitals"}
               </h1>
-              <p className="text-sm sm:text-base font-normal text-[#10162C]/75 leading-relaxed">
+              <p className="text-sm sm:text-base font-normal text-[#10162C]/75 leading-relaxed text-pretty">
                 {lang === "id"
                   ? "Pilih kota cabang di bawah ini untuk melihat detail poliklinik spesialis, nomor darurat IGD 24 Jam, peta navigasi Google Maps, serta perbandingan fasilitas tiap rumah sakit."
                   : "Select a city branch below to inspect its specialist clinics, 24/7 emergency contacts, Google Maps directions, and facility comparison."}
@@ -83,9 +83,9 @@ export default function CabangRsPage() {
                     key={b.id}
                     type="button"
                     onClick={() => setSelectedBranchTab(b.id)}
-                    className={`px-4 py-2.5 rounded-full text-xs font-medium transition-all flex items-center gap-1.5 cursor-pointer ${
+                    className={`px-4 py-2.5 rounded-full text-xs font-medium transition-colors duration-200 flex items-center gap-1.5 cursor-pointer ${
                       active
-                        ? "bg-[#154C96] text-white shadow-md"
+                        ? "bg-[#154C96] text-white"
                         : "bg-white text-[#10162C] border border-[#B2B5B3]/60 hover:border-[#00A79C]"
                     }`}
                   >
@@ -101,13 +101,13 @@ export default function CabangRsPage() {
         </div>
       </section>
 
-      {/* 2. Interactive Split-View Hospital Explorer (Dirancang Khusus untuk Halaman Cabang RS) */}
+      {/* 2. Interactive Split-View Hospital Explorer */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-8 items-start">
             {/* Left Column: 5 Hospital Selector List */}
             <div className="lg:col-span-4 space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#154C96] px-1">
+              <p className="text-xs font-semibold text-[#154C96] px-1">
                 {lang === "id"
                   ? "Pilih Unit Rumah Sakit (5 Cabang):"
                   : "Select Hospital Unit (5 Branches):"}
@@ -119,9 +119,9 @@ export default function CabangRsPage() {
                     key={b.id}
                     type="button"
                     onClick={() => setSelectedBranchTab(b.id)}
-                    className={`w-full p-4 rounded-2xl text-left transition-all cursor-pointer border-2 flex items-center justify-between gap-3 ${
+                    className={`w-full p-4 rounded-2xl text-left transition-colors duration-200 cursor-pointer border flex items-center justify-between gap-3 ${
                       isSelected
-                        ? "bg-[rgba(0,167,156,0.08)] border-[#00A79C] shadow-md"
+                        ? "bg-[rgba(0,167,156,0.08)] border-[#00A79C]"
                         : "bg-white border-[#E0E4E9] hover:border-[#154C96]/40"
                     }`}
                   >
@@ -162,7 +162,7 @@ export default function CabangRsPage() {
             </div>
 
             {/* Right Column: Comprehensive Active Branch Workspace */}
-            <div className="lg:col-span-8 rounded-3xl bg-white border-2 border-[#00A79C]/35 shadow-xl overflow-hidden">
+            <div className="lg:col-span-8 rounded-3xl bg-white border border-[#00A79C]/30 overflow-hidden">
               {/* Top Banner Image + Branch Logo Bar */}
               <div className="relative h-64 sm:h-72 bg-[#10162C]">
                 <img
@@ -170,25 +170,25 @@ export default function CabangRsPage() {
                   alt={activeBranch.name}
                   className="w-full h-full object-cover opacity-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#10162C]/85 via-[#10162C]/25 to-transparent" />
+                <div className="absolute inset-0 bg-[#10162C]/50" />
                 <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                  <span className="px-3.5 py-1 rounded-full bg-[#154C96] text-white text-xs font-medium shadow">
+                  <span className="px-3.5 py-1 rounded-full bg-[#154C96] text-white text-xs font-medium">
                     RS {activeBranch.type}
                   </span>
-                  <span className="px-3.5 py-1 rounded-full bg-white text-[#10162C] text-xs font-medium shadow">
+                  <span className="px-3.5 py-1 rounded-full bg-white text-[#10162C] text-xs font-medium">
                     {activeBranch.badge[lang]}
                   </span>
                 </div>
                 <div className="absolute bottom-4 left-5 right-5 flex flex-wrap items-end justify-between gap-4 text-white">
                   <div>
-                    <p className="text-xs font-medium text-[#F69320] uppercase tracking-wider">
+                    <p className="text-xs font-medium text-[#F69320]">
                       {activeBranch.igdStatus[lang]}
                     </p>
                     <h3 className="text-2xl sm:text-3xl font-semibold mt-0.5">
                       {activeBranch.name}
                     </h3>
                   </div>
-                  <div className="bg-white px-3.5 py-1.5 rounded-xl shadow">
+                  <div className="bg-white px-3.5 py-1.5 rounded-xl border border-white/40">
                     <img
                       src={activeBranch.logoColor}
                       alt={activeBranch.name}
@@ -200,14 +200,14 @@ export default function CabangRsPage() {
 
               {/* Detail Content */}
               <div className="p-6 sm:p-8 space-y-6">
-                <p className="text-sm sm:text-base font-normal text-[#10162C]/80 leading-relaxed">
+                <p className="text-sm sm:text-base font-normal text-[#10162C]/80 leading-relaxed text-pretty">
                   {activeBranch.description[lang]}
                 </p>
 
                 {/* Address & Direct Contacts Box */}
                 <div className="grid sm:grid-cols-2 gap-4 p-5 rounded-2xl bg-[#E0E4E9]/40 border border-[#E0E4E9]">
                   <div className="space-y-2">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#154C96]">
+                    <p className="text-xs font-semibold text-[#154C96]">
                       {lang === "id"
                         ? "Alamat & Navigasi Peta"
                         : "Address & Map Navigation"}
@@ -219,7 +219,7 @@ export default function CabangRsPage() {
                       href={activeBranch.mapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-medium text-[#00A79C] hover:text-[#F69320]"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-[#00A79C] hover:text-[#F69320] transition-colors duration-200"
                     >
                       <span>
                         {lang === "id"
@@ -231,7 +231,7 @@ export default function CabangRsPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#154C96]">
+                    <p className="text-xs font-semibold text-[#154C96]">
                       {lang === "id"
                         ? "Kontak Cepat Cabang"
                         : "Branch Direct Contacts"}
@@ -295,7 +295,7 @@ export default function CabangRsPage() {
                 </div>
 
                 {/* Action Bar */}
-                <div className="pt-4 border-t border-[#E0E4E9] flex flex-wrap items-center gap-3">
+                <div className="pt-5 flex flex-wrap items-center gap-3">
                   <button
                     type="button"
                     onClick={() =>
@@ -305,7 +305,7 @@ export default function CabangRsPage() {
                         activeBranch.id
                       )
                     }
-                    className="px-5 py-3 rounded-full bg-[#F69320] hover:bg-[#154C96] text-white text-xs sm:text-sm font-medium transition-colors flex items-center gap-2 cursor-pointer"
+                    className="px-5 py-3 rounded-full bg-[#F69320] hover:bg-[#154C96] text-white text-xs sm:text-sm font-medium transition-colors duration-200 flex items-center gap-2 cursor-pointer"
                   >
                     <FaCalendarCheck />
                     <span>
@@ -318,7 +318,7 @@ export default function CabangRsPage() {
                   <button
                     type="button"
                     onClick={() => jumpToDoctorSchedule(activeBranch.id)}
-                    className="px-5 py-3 rounded-full bg-[#154C96] hover:bg-[#00A79C] text-white text-xs sm:text-sm font-medium transition-colors flex items-center gap-2 cursor-pointer"
+                    className="px-5 py-3 rounded-full bg-[#154C96] hover:bg-[#00A79C] text-white text-xs sm:text-sm font-medium transition-colors duration-200 flex items-center gap-2 cursor-pointer"
                   >
                     <FaStethoscope />
                     <span>
@@ -332,7 +332,7 @@ export default function CabangRsPage() {
                     href={`https://wa.me/${activeBranch.whatsapp}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-5 py-3 rounded-full bg-[#00A79C] hover:bg-[#154C96] text-white text-xs sm:text-sm font-medium transition-colors flex items-center gap-2"
+                    className="px-5 py-3 rounded-full bg-[#00A79C] hover:bg-[#154C96] text-white text-xs sm:text-sm font-medium transition-colors duration-200 flex items-center gap-2"
                   >
                     <FaWhatsapp />
                     <span>Chat Admin {activeBranch.city}</span>
@@ -344,26 +344,26 @@ export default function CabangRsPage() {
         </div>
       </section>
 
-      {/* 3. Tabel Perbandingan Kapasitas & Layanan 5 Cabang (Soft Grey Section) */}
+      {/* 3. Tabel Perbandingan Kapasitas & Layanan 5 Cabang */}
       <section className="py-16 lg:py-20 bg-[#E0E4E9]/45">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 space-y-8">
           <div className="max-w-2xl">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-[#154C96] text-white text-xs font-medium uppercase tracking-wider mb-2">
+            <span className="inline-block px-3.5 py-1 rounded-full bg-[#154C96] text-white text-xs font-medium mb-2">
               {lang === "id"
                 ? "Perbandingan Antar Cabang"
                 : "Cross-Branch Comparison"}
             </span>
-            <h2 className="text-2xl sm:text-3xl font-semibold text-[#10162C]">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-[#10162C] text-balance">
               {lang === "id"
                 ? "Ringkasan Layanan & Penjaminan di 5 Rumah Sakit Avisena"
                 : "Service & Coverage Overview Across All 5 Avisena Hospitals"}
             </h2>
           </div>
 
-          <div className="overflow-x-auto bg-white rounded-3xl border border-[#E0E4E9] shadow-xs">
+          <div data-ui="table" className="overflow-x-auto bg-white rounded-3xl border border-[#E0E4E9]">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-[#154C96] text-white text-xs uppercase tracking-wider">
+                <tr className="bg-[#154C96] text-white text-xs font-medium">
                   <th className="py-4 px-5">
                     {lang === "id" ? "Cabang RS" : "Hospital"}
                   </th>
@@ -373,22 +373,24 @@ export default function CabangRsPage() {
                   <th className="py-4 px-5">Telepon Darurat</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#E0E4E9] text-xs sm:text-sm">
+              <tbody className="text-xs sm:text-sm">
                 {BRANCHES.map((b) => (
                   <tr
                     key={b.id}
                     onClick={() => setSelectedBranchTab(b.id)}
-                    className="hover:bg-[rgba(0,167,156,0.06)] cursor-pointer transition-colors"
+                    className="hover:bg-[rgba(0,167,156,0.08)] even:bg-[#E0E4E9]/20 cursor-pointer transition-colors duration-200"
                   >
                     <td className="py-4 px-5 font-semibold text-[#10162C]">
                       {b.name}
                     </td>
                     <td className="py-4 px-5">RS {b.type}</td>
                     <td className="py-4 px-5 text-[#00A79C] font-medium">
-                      ✓ Siaga 24 Jam
+                      <FaCircleCheck className="inline text-[#00A79C] mr-1.5" />
+                      Siaga 24 Jam
                     </td>
                     <td className="py-4 px-5 text-[#10162C]/80">
-                      ✓ Umum, BPJS Kesehatan, BPJS TK & 50+ Asuransi
+                      <FaCircleCheck className="inline text-[#00A79C] mr-1.5" />
+                      Umum, BPJS Kesehatan, BPJS TK & 50+ Asuransi
                     </td>
                     <td className="py-4 px-5 font-medium text-[#154C96]">
                       {b.phone}
@@ -401,7 +403,7 @@ export default function CabangRsPage() {
         </div>
       </section>
 
-      {/* 4. Panduan Kunjungan & Penjaminan Pasien (White Section Sebelum Footer Biru) */}
+      {/* 4. Panduan Kunjungan & Penjaminan Pasien */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6">
@@ -411,7 +413,7 @@ export default function CabangRsPage() {
                   ? "Pasien BPJS Kesehatan (JKN)"
                   : "BPJS Kesehatan (JKN) Patients"}
               </h3>
-              <p className="text-xs sm:text-sm font-normal text-[#10162C]/75 leading-relaxed">
+              <p className="text-xs sm:text-sm font-normal text-[#10162C]/75 leading-relaxed text-pretty">
                 {lang === "id"
                   ? "Seluruh 5 cabang RS Avisena melayani rujukan berjenjang Mobile JKN maupun kasus gawat darurat (IGD 24 Jam) tanpa rujukan sesuai ketentuan BPJS."
                   : "All 5 Avisena hospitals accept Mobile JKN referrals and 24/7 emergency walk-ins without referral letters."}
@@ -424,7 +426,7 @@ export default function CabangRsPage() {
                   ? "Kecelakaan Kerja & Mitra Pabrik"
                   : "Occupational Trauma & Corporate Partners"}
               </h3>
-              <p className="text-xs sm:text-sm font-normal text-[#10162C]/75 leading-relaxed">
+              <p className="text-xs sm:text-sm font-normal text-[#10162C]/75 leading-relaxed text-pretty">
                 {lang === "id"
                   ? "Kerja sama Pusat Layanan Kecelakaan Kerja (PLKK BPJS Ketenagakerjaan) dan MCU on-site bagi perusahaan di Cimahi, Subang, dan Cikampek."
                   : "Official occupational trauma center (BPJS Ketenagakerjaan) and corporate MCU partner across industrial corridors."}
@@ -437,7 +439,7 @@ export default function CabangRsPage() {
                   ? "Layanan Jemput Ambulans 24 Jam"
                   : "24/7 Ambulance Pickup Service"}
               </h3>
-              <p className="text-xs sm:text-sm font-normal text-[#10162C]/75 leading-relaxed">
+              <p className="text-xs sm:text-sm font-normal text-[#10162C]/75 leading-relaxed text-pretty">
                 {lang === "id"
                   ? "Butuh penjemputan pasien darurat dari rumah atau lokasi kerja? Hubungi nomor IGD cabang terdekat untuk pengiriman ambulans segera."
                   : "Need urgent patient pickup from home or workplace? Call the nearest branch ER line for immediate ambulance dispatch."}

@@ -20,8 +20,8 @@ export default function KomunitasPage() {
 
   return (
     <div className="bg-white">
-      {/* 1. Light & Warm Header Khusus Komunitas & Edukasi */}
-      <section className="relative bg-gradient-to-br from-[#FFFFFF] via-[#E0E4E9]/40 to-[rgba(0,167,156,0.12)] pt-10 pb-14 lg:pt-14 lg:pb-16 border-b border-[#E0E4E9] overflow-hidden">
+      {/* 1. Warm Header Khusus Komunitas & Edukasi */}
+      <section className="relative bg-[#E0E4E9]/35 pt-10 pb-14 lg:pt-14 lg:pb-16 overflow-hidden">
         <SimpulSupergraphic
           variant="outline-tosca"
           opacity={0.1}
@@ -31,7 +31,7 @@ export default function KomunitasPage() {
           <nav className="flex items-center gap-2 text-xs font-light text-[#10162C]/65 mb-5">
             <Link
               href="/"
-              className="inline-flex items-center gap-1.5 hover:text-[#00A79C] transition-colors"
+              className="inline-flex items-center gap-1.5 hover:text-[#00A79C] transition-colors duration-200"
             >
               <FaHouse className="text-[11px]" />
               <span>{lang === "id" ? "Beranda" : "Home"}</span>
@@ -45,26 +45,26 @@ export default function KomunitasPage() {
           </nav>
 
           <div className="max-w-3xl space-y-3">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-[#00A79C] text-white text-xs font-medium uppercase tracking-wider">
+            <span className="inline-block px-3.5 py-1 rounded-full bg-[#00A79C] text-white text-xs font-medium">
               {lang === "id"
                 ? "Dampak Sosial SWEEF & Pengabdian Warga"
                 : "SWEEF Social Impact & Neighborhood Outreach"}
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#10162C] leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#10162C] leading-tight text-balance">
               {lang === "id"
                 ? "Hadir Menjemput Harapan & Berbagi Ilmu Kesehatan Membumi"
                 : "Reaching Underserved Communities & Sharing Accessible Health Wisdom"}
             </h1>
-            <p className="text-sm sm:text-base font-normal text-[#10162C]/75 leading-relaxed">
+            <p className="text-sm sm:text-base font-normal text-[#10162C]/75 leading-relaxed text-pretty">
               {lang === "id"
                 ? "Bagi Avisena, kesehatan bukan hanya terjadi di dalam ruang praktik, melainkan hidup di tengah desa, koperasi peternak, posyandu, dan obrolan hangat antar tetangga."
-                : "To Avisena, healthcare lives beyond hospital walls—thriving in rural villages, dairy cooperatives, community clinics, and everyday neighborly conversations."}
+                : "To Avisena, healthcare lives beyond hospital walls, thriving in rural villages, dairy cooperatives, community clinics, and everyday neighborly conversations."}
             </p>
           </div>
 
           {/* 4 Impact Counters */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
-            <div className="bg-white p-5 rounded-2xl border border-[#E0E4E9] shadow-2xs flex items-center gap-3.5">
+            <div className="bg-white p-5 rounded-2xl border border-[#E0E4E9] flex items-center gap-3.5">
               <div className="w-11 h-11 rounded-2xl bg-[rgba(0,167,156,0.14)] text-[#00A79C] flex items-center justify-center text-lg shrink-0">
                 <FaTruckMedical />
               </div>
@@ -78,7 +78,7 @@ export default function KomunitasPage() {
               </div>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl border border-[#E0E4E9] shadow-2xs flex items-center gap-3.5">
+            <div className="bg-white p-5 rounded-2xl border border-[#E0E4E9] flex items-center gap-3.5">
               <div className="w-11 h-11 rounded-2xl bg-[rgba(246,147,32,0.15)] text-[#F69320] flex items-center justify-center text-lg shrink-0">
                 <FaPeopleGroup />
               </div>
@@ -92,7 +92,7 @@ export default function KomunitasPage() {
               </div>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl border border-[#E0E4E9] shadow-2xs flex items-center gap-3.5">
+            <div className="bg-white p-5 rounded-2xl border border-[#E0E4E9] flex items-center gap-3.5">
               <div className="w-11 h-11 rounded-2xl bg-[rgba(21,76,150,0.12)] text-[#154C96] flex items-center justify-center text-lg shrink-0">
                 <FaHandHoldingHeart />
               </div>
@@ -101,12 +101,12 @@ export default function KomunitasPage() {
                 <p className="text-xs font-normal text-[#10162C]/70">
                   {lang === "id"
                     ? "Pemberdayaan Perempuan"
-                    : "Empowered Women Health Cadres"}
+                    : "Women Health Champions"}
                 </p>
               </div>
             </div>
 
-            <div className="bg-white p-5 rounded-2xl border border-[#E0E4E9] shadow-2xs flex items-center gap-3.5">
+            <div className="bg-white p-5 rounded-2xl border border-[#E0E4E9] flex items-center gap-3.5">
               <div className="w-11 h-11 rounded-2xl bg-[rgba(0,167,156,0.14)] text-[#00A79C] flex items-center justify-center text-lg shrink-0">
                 <FaSeedling />
               </div>
@@ -126,7 +126,7 @@ export default function KomunitasPage() {
       {/* 2. Kisah RS Keliling, Kolaborasi KPBS & Suara Tetangga */}
       <CommunitySection />
 
-      {/* 3. Artikel Edukasi Kesehatan & Papan Jadwal (Berakhir dengan Background Putih Sebelum Footer Biru) */}
+      {/* 3. Artikel Edukasi Kesehatan & Papan Jadwal */}
       <EducationSection />
     </div>
   );

@@ -20,8 +20,8 @@ export default function CariDokterPage() {
 
   return (
     <div className="bg-white">
-      {/* 1. Light & Clean Header Khusus Halaman Direktori Dokter */}
-      <section className="relative bg-gradient-to-br from-[#FFFFFF] via-[#E0E4E9]/40 to-[rgba(0,167,156,0.12)] pt-10 pb-12 lg:pt-14 lg:pb-14 border-b border-[#E0E4E9] overflow-hidden">
+      {/* 1. Warm Header Khusus Halaman Direktori Dokter */}
+      <section className="relative bg-[#E0E4E9]/35 pt-10 pb-12 lg:pt-14 lg:pb-14 overflow-hidden">
         <SimpulSupergraphic
           variant="outline-tosca"
           opacity={0.1}
@@ -31,7 +31,7 @@ export default function CariDokterPage() {
           <nav className="flex items-center gap-2 text-xs font-light text-[#10162C]/65 mb-5">
             <Link
               href="/"
-              className="inline-flex items-center gap-1.5 hover:text-[#00A79C] transition-colors"
+              className="inline-flex items-center gap-1.5 hover:text-[#00A79C] transition-colors duration-200"
             >
               <FaHouse className="text-[11px]" />
               <span>{lang === "id" ? "Beranda" : "Home"}</span>
@@ -45,17 +45,17 @@ export default function CariDokterPage() {
           </nav>
 
           <div className="max-w-3xl space-y-3">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-[#154C96] text-white text-xs font-medium uppercase tracking-wider">
+            <span className="inline-block px-3.5 py-1 rounded-full bg-[#154C96] text-white text-xs font-medium">
               {lang === "id"
                 ? "Reservasi Terpadu 5 Cabang RS Avisena"
                 : "Unified Booking Across 5 Avisena Hospitals"}
             </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#10162C] leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#10162C] leading-tight text-balance">
               {lang === "id"
                 ? "Direktori Dokter Spesialis & Jadwal Praktik Harian"
                 : "Specialist Doctor Directory & Practice Schedules"}
             </h1>
-            <p className="text-sm sm:text-base font-normal text-[#10162C]/75 leading-relaxed">
+            <p className="text-sm sm:text-base font-normal text-[#10162C]/75 leading-relaxed text-pretty">
               {lang === "id"
                 ? "Gunakan filter lokasi cabang dan spesialisasi di bawah ini untuk menemukan dokter pilihan keluarga Anda di Cimahi, Pangalengan, Kuningan, Subang, atau Cikampek."
                 : "Filter by branch location and medical specialty below to book your preferred doctor across Cimahi, Pangalengan, Kuningan, Subang, or Cikampek."}
@@ -67,12 +67,12 @@ export default function CariDokterPage() {
       {/* 2. Direktori & Filter Dokter Multi-Cabang */}
       <FindDoctorSection />
 
-      {/* 3. Papan Pengumuman Perubahan Jadwal Praktik Terkini (Soft Grey Section) */}
-      <section className="py-16 bg-[#E0E4E9]/50 border-y border-[#E0E4E9]">
+      {/* 3. Papan Pengumuman Perubahan Jadwal Praktik Terkini */}
+      <section className="py-16 bg-[#E0E4E9]/50">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 space-y-6">
           <div className="flex items-center gap-2.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#F69320] animate-ping" />
-            <h2 className="text-xl sm:text-2xl font-semibold text-[#10162C]">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#F69320]" />
+            <h2 className="text-xl sm:text-2xl font-semibold text-[#10162C] text-balance">
               {lang === "id"
                 ? "Papan Informasi Jadwal Poliklinik Terkini"
                 : "Live Polyclinic Schedule Notices"}
@@ -83,7 +83,7 @@ export default function CariDokterPage() {
             {SCHEDULE_UPDATES.map((upd, idx) => (
               <div
                 key={idx}
-                className="bg-white p-6 rounded-3xl border border-[#E0E4E9] shadow-2xs space-y-2"
+                className="bg-white p-6 rounded-3xl border border-[#E0E4E9] space-y-2"
               >
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-xs font-semibold text-[#154C96]">
@@ -93,7 +93,7 @@ export default function CariDokterPage() {
                     {upd.status}
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm font-normal text-[#10162C]/80 leading-relaxed">
+                <p className="text-xs sm:text-sm font-normal text-[#10162C]/80 leading-relaxed text-pretty">
                   {upd.notice[lang]}
                 </p>
               </div>
@@ -102,16 +102,16 @@ export default function CariDokterPage() {
         </div>
       </section>
 
-      {/* 4. Panduan Alur Pendaftaran Tanpa Antre (White Section Sebelum Footer Biru) */}
+      {/* 4. Panduan Alur Pendaftaran Tanpa Antre */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 space-y-10">
           <div className="text-center max-w-2xl mx-auto">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-[rgba(0,167,156,0.14)] text-[#00A79C] text-xs font-medium uppercase tracking-wider mb-2">
+            <span className="inline-block px-3.5 py-1 rounded-full bg-[rgba(0,167,156,0.14)] text-[#00A79C] text-xs font-medium mb-2">
               {lang === "id"
                 ? "Panduan Pendaftaran Rawat Jalan"
                 : "Outpatient Registration Guide"}
             </span>
-            <h2 className="text-2xl sm:text-3xl font-semibold text-[#10162C]">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-[#10162C] text-balance">
               {lang === "id"
                 ? "2 Jalur Mudah Berobat di Rumah Sakit Avisena"
                 : "2 Easy Pathways for Your Clinic Visit"}
@@ -158,7 +158,7 @@ export default function CariDokterPage() {
               <button
                 type="button"
                 onClick={() => openQuickModal("appointment")}
-                className="px-5 py-2.5 rounded-full bg-[#F69320] hover:bg-[#154C96] text-white text-xs font-medium transition-colors cursor-pointer"
+                className="px-5 py-2.5 rounded-full bg-[#F69320] hover:bg-[#154C96] text-white text-xs font-medium transition-colors duration-200 cursor-pointer"
               >
                 {lang === "id"
                   ? "Buka Formulir Reservasi Cepat →"
@@ -206,7 +206,7 @@ export default function CariDokterPage() {
                 href="https://wa.me/6281220200170"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#00A79C] hover:bg-[#154C96] text-white text-xs font-medium transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#00A79C] hover:bg-[#154C96] text-white text-xs font-medium transition-colors duration-200"
               >
                 <FaWhatsapp />
                 <span>

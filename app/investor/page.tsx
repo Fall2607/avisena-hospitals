@@ -25,8 +25,8 @@ export default function InvestorPage() {
 
   return (
     <div className="bg-white">
-      {/* 1. Executive Light Header (Kontras Bersih dari Navbar Putih & Tidak Bertabrakan dengan Section Biru) */}
-      <section className="relative bg-gradient-to-br from-[#FFFFFF] via-[#E0E4E9]/45 to-[rgba(0,167,156,0.12)] pt-10 pb-16 lg:pt-14 lg:pb-20 border-b border-[#E0E4E9] overflow-hidden">
+      {/* 1. Executive Warm Header */}
+      <section className="relative bg-[#E0E4E9]/35 pt-10 pb-16 lg:pt-14 lg:pb-20 overflow-hidden">
         <SimpulSupergraphic
           variant="outline-tosca"
           opacity={0.1}
@@ -38,7 +38,7 @@ export default function InvestorPage() {
           <nav className="flex items-center gap-2 text-xs font-light text-[#10162C]/65 mb-6">
             <Link
               href="/"
-              className="inline-flex items-center gap-1.5 hover:text-[#00A79C] transition-colors"
+              className="inline-flex items-center gap-1.5 hover:text-[#00A79C] transition-colors duration-200"
             >
               <FaHouse className="text-[11px]" />
               <span>{lang === "id" ? "Beranda" : "Home"}</span>
@@ -53,13 +53,13 @@ export default function InvestorPage() {
 
           <div className="grid lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 space-y-5">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(21,76,150,0.10)] text-[#154C96] text-xs font-medium uppercase tracking-wider">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-[rgba(21,76,150,0.10)] text-[#154C96] text-xs font-medium">
                 {lang === "id"
                   ? "Investor Relations • Kemitraan SWEEF & GCG"
                   : "Investor Relations • SWEEF Partnership & GCG"}
               </span>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#10162C] leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#10162C] leading-tight text-balance">
                 {lang === "id" ? (
                   <>
                     Pertumbuhan Strategis &{" "}
@@ -79,7 +79,7 @@ export default function InvestorPage() {
                 )}
               </h1>
 
-              <p className="text-sm sm:text-base font-normal text-[#10162C]/80 leading-relaxed max-w-2xl">
+              <p className="text-sm sm:text-base font-normal text-[#10162C]/80 leading-relaxed max-w-2xl text-pretty">
                 {lang === "id"
                   ? "PT Avisena Medika (Avisena Healthcare Group) memadukan skala ekonomi jaringan 5 rumah sakit di provinsi terpadat Indonesia dengan tata kelola perusahaan yang transparan (Good Corporate Governance) serta dampak sosial pemberdayaan perempuan bersama SWEEF Capital."
                   : "PT Avisena Medika (Avisena Healthcare Group) combines the network scale of 5 hospitals in Indonesia's most populous province with transparent Good Corporate Governance (GCG) and measurable gender-lens social impact with SWEEF Capital."}
@@ -89,7 +89,7 @@ export default function InvestorPage() {
                 <button
                   type="button"
                   onClick={() => openQuickModal("prospectus")}
-                  className="px-6 py-3.5 rounded-full bg-[#F69320] hover:bg-[#154C96] text-white text-xs sm:text-sm font-medium shadow-lg transition-all flex items-center gap-2 cursor-pointer"
+                  className="px-6 py-3.5 rounded-full bg-[#F69320] hover:bg-[#154C96] text-white text-xs sm:text-sm font-medium transition-colors duration-200 flex items-center gap-2 cursor-pointer"
                 >
                   <FaFilePdf />
                   <span>
@@ -100,7 +100,7 @@ export default function InvestorPage() {
                 </button>
                 <a
                   href="mailto:cs@rsavisena.co.id?subject=Investor%20Relations%20Inquiry%20-%20Avisena%20Healthcare%20Group"
-                  className="px-6 py-3.5 rounded-full bg-white hover:bg-[#00A79C] text-[#154C96] hover:text-white border border-[#154C96]/25 text-xs sm:text-sm font-medium transition-all flex items-center gap-2"
+                  className="px-6 py-3.5 rounded-full bg-white hover:bg-[#00A79C] text-[#154C96] hover:text-white border border-[#154C96]/25 text-xs sm:text-sm font-medium transition-colors duration-200 flex items-center gap-2"
                 >
                   <FaEnvelope />
                   <span>
@@ -114,10 +114,10 @@ export default function InvestorPage() {
 
             {/* Key Investment Thesis Metrics Card */}
             <div className="lg:col-span-5">
-              <div className="bg-white rounded-3xl p-6 sm:p-8 border-2 border-[#00A79C]/30 shadow-xl space-y-5">
-                <div className="flex items-center justify-between border-b border-[#E0E4E9] pb-4">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#00A79C]/30 space-y-5">
+                <div className="flex items-center justify-between pb-3">
                   <div>
-                    <p className="text-xs font-medium uppercase tracking-wider text-[#00A79C]">
+                    <p className="text-xs font-medium text-[#00A79C]">
                       {lang === "id"
                         ? "Ikhtisar Kinerja Korporasi"
                         : "Corporate Snapshot"}
@@ -179,7 +179,7 @@ export default function InvestorPage() {
         </div>
       </section>
 
-      {/* 2. Tiga Pilar Investasi & Tata Kelola (Navy Section di Tengah Halaman — Kontras dengan Atas & Bawah) */}
+      {/* 2. Tiga Pilar Investasi & Tata Kelola */}
       <section className="py-20 bg-[#154C96] text-white relative overflow-hidden">
         <SimpulSupergraphic
           variant="outline-white"
@@ -188,12 +188,12 @@ export default function InvestorPage() {
         />
         <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-3xl mb-12">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-[#F69320] text-white text-xs font-medium uppercase tracking-wider mb-3">
+            <span className="inline-block px-3.5 py-1 rounded-full bg-[#F69320] text-white text-xs font-medium mb-3">
               {lang === "id"
                 ? "3 Pilar Nilai Investor"
                 : "3 Core Investment Pillars"}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-semibold">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-balance">
               {lang === "id"
                 ? "Fondasi Pertumbuhan yang Terukur & Bertanggung Jawab"
                 : "Disciplined Expansion Backed by Transparent Governance"}
@@ -201,7 +201,7 @@ export default function InvestorPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-7">
-            <div className="p-7 rounded-3xl bg-white/10 backdrop-blur-xs border border-white/15 space-y-4">
+            <div className="p-7 rounded-3xl bg-[#10162C]/40 border border-white/20 space-y-4">
               <div className="w-12 h-12 rounded-2xl bg-[#00A79C] text-white flex items-center justify-center text-xl">
                 <FaChartLine />
               </div>
@@ -210,14 +210,14 @@ export default function InvestorPage() {
                   ? "1. Ekspansi Jaringan Regional"
                   : "1. Regional Network Expansion"}
               </h3>
-              <p className="text-sm font-normal text-white/85 leading-relaxed">
+              <p className="text-sm font-normal text-white/85 leading-relaxed text-pretty">
                 {lang === "id"
                   ? "Strategi akuisisi dan pengembangan rumah sakit Tipe C & D di kantong-kantong populasi produktif Jawa Barat (kawasan industri, agribisnis, dan kota satelit)."
                   : "Targeted development and acquisition of Class C & D hospitals across West Java's high-density industrial, agricultural, and urban corridors."}
               </p>
             </div>
 
-            <div className="p-7 rounded-3xl bg-white text-[#10162C] border-4 border-[#F69320] shadow-xl space-y-4">
+            <div className="p-7 rounded-3xl bg-white text-[#10162C] border-2 border-[#F69320] space-y-4">
               <div className="w-12 h-12 rounded-2xl bg-[#F69320] text-white flex items-center justify-center text-xl">
                 <FaBuildingColumns />
               </div>
@@ -226,14 +226,14 @@ export default function InvestorPage() {
                   ? "2. Investasi Berdampak (SWEEF)"
                   : "2. SWEEF Impact Investment"}
               </h3>
-              <p className="text-sm font-normal text-[#10162C]/80 leading-relaxed">
+              <p className="text-sm font-normal text-[#10162C]/80 leading-relaxed text-pretty">
                 {lang === "id"
                   ? "Kemitraan strategis bersama SWEEF Capital yang menempatkan kepemimpinan perempuan, kesejahteraan tenaga medis, serta akses kesehatan inklusif sebagai penggerak nilai perusahaan."
                   : "Strategic partnership with SWEEF Capital placing women's leadership, healthcare workforce wellbeing, and inclusive medical access at the core of enterprise value."}
               </p>
             </div>
 
-            <div className="p-7 rounded-3xl bg-white/10 backdrop-blur-xs border border-white/15 space-y-4">
+            <div className="p-7 rounded-3xl bg-[#10162C]/40 border border-white/20 space-y-4">
               <div className="w-12 h-12 rounded-2xl bg-[#00A79C] text-white flex items-center justify-center text-xl">
                 <FaShieldHalved />
               </div>
@@ -242,7 +242,7 @@ export default function InvestorPage() {
                   ? "3. Tata Kelola GCG & Kesiapan IPO"
                   : "3. GCG & IPO Readiness"}
               </h3>
-              <p className="text-sm font-normal text-white/85 leading-relaxed">
+              <p className="text-sm font-normal text-white/85 leading-relaxed text-pretty">
                 {lang === "id"
                   ? "Penerapan standar audit keuangan independen, komite mutu klinis, kepatuhan regulasi Kemenkes/BPJS, serta pelaporan ESG secara berkala."
                   : "Rigorous independent financial auditing, clinical quality committees, regulatory compliance, and periodic ESG impact reporting."}
@@ -252,17 +252,17 @@ export default function InvestorPage() {
         </div>
       </section>
 
-      {/* 3. Portofolio Aset 5 Rumah Sakit (White Background) */}
+      {/* 3. Portofolio Aset 5 Rumah Sakit */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 space-y-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <span className="inline-block px-3.5 py-1 rounded-full bg-[rgba(0,167,156,0.14)] text-[#00A79C] text-xs font-medium uppercase tracking-wider mb-2">
+              <span className="inline-block px-3.5 py-1 rounded-full bg-[rgba(0,167,156,0.14)] text-[#00A79C] text-xs font-medium mb-2">
                 {lang === "id"
                   ? "Portofolio Rumah Sakit Aktif"
                   : "Active Hospital Asset Portfolio"}
               </span>
-              <h2 className="text-3xl font-semibold text-[#10162C]">
+              <h2 className="text-3xl font-semibold text-[#10162C] text-balance">
                 {lang === "id"
                   ? "Profil Kapasitas & Segmen Pasar 5 Unit Rumah Sakit"
                   : "Capacity & Market Segment Profile of Our 5 Hospitals"}
@@ -270,7 +270,7 @@ export default function InvestorPage() {
             </div>
             <Link
               href="/cabang-rs"
-              className="text-xs sm:text-sm font-medium text-[#154C96] hover:text-[#F69320] flex items-center gap-1.5"
+              className="text-xs sm:text-sm font-medium text-[#154C96] hover:text-[#F69320] flex items-center gap-1.5 transition-colors duration-200"
             >
               <span>
                 {lang === "id"
@@ -281,10 +281,10 @@ export default function InvestorPage() {
             </Link>
           </div>
 
-          <div className="overflow-x-auto rounded-3xl border border-[#E0E4E9] shadow-xs">
+          <div data-ui="table" className="overflow-x-auto rounded-3xl border border-[#E0E4E9]">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-[#E0E4E9]/60 text-[#154C96] text-xs font-semibold uppercase tracking-wider">
+                <tr className="bg-[#E0E4E9]/60 text-[#154C96] text-xs font-semibold">
                   <th className="py-4 px-5">
                     {lang === "id" ? "Unit Rumah Sakit" : "Hospital Unit"}
                   </th>
@@ -304,11 +304,11 @@ export default function InvestorPage() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#E0E4E9] text-xs sm:text-sm">
+              <tbody className="text-xs sm:text-sm">
                 {BRANCHES.map((b) => (
                   <tr
                     key={b.id}
-                    className="hover:bg-[rgba(0,167,156,0.05)] transition-colors"
+                    className="hover:bg-[rgba(0,167,156,0.05)] even:bg-[#E0E4E9]/15 transition-colors duration-200"
                   >
                     <td className="py-4 px-5 font-semibold text-[#10162C]">
                       {b.name}
@@ -326,7 +326,7 @@ export default function InvestorPage() {
                       <button
                         type="button"
                         onClick={() => setDrawerBranch(b)}
-                        className="text-xs font-medium text-[#00A79C] hover:text-[#F69320] cursor-pointer"
+                        className="text-xs font-medium text-[#00A79C] hover:text-[#F69320] cursor-pointer transition-colors duration-200"
                       >
                         {lang === "id" ? "Buka Data RS →" : "Open Data →"}
                       </button>
@@ -339,22 +339,22 @@ export default function InvestorPage() {
         </div>
       </section>
 
-      {/* 4. Pusat Dokumen GCG, Laporan Tahunan & Kontak Investor (Light Section Sebelum Footer Biru) */}
-      <section className="py-20 bg-[#E0E4E9]/45 border-t border-[#E0E4E9]">
+      {/* 4. Pusat Dokumen GCG, Laporan Tahunan & Kontak Investor */}
+      <section className="py-20 bg-[#E0E4E9]/45">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-5 space-y-4">
-              <span className="inline-block px-3.5 py-1 rounded-full bg-[#154C96] text-white text-xs font-medium uppercase tracking-wider">
+              <span className="inline-block px-3.5 py-1 rounded-full bg-[#154C96] text-white text-xs font-medium">
                 {lang === "id"
                   ? "Dokumen & Pelaporan GCG"
                   : "GCG Documents & Disclosures"}
               </span>
-              <h2 className="text-2xl sm:text-3xl font-semibold text-[#10162C]">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-[#10162C] text-balance">
                 {lang === "id"
                   ? "Transparansi Informasi bagi Pemangku Kepentingan"
                   : "Transparent Disclosures for Stakeholders"}
               </h2>
-              <p className="text-sm font-normal text-[#10162C]/75 leading-relaxed">
+              <p className="text-sm font-normal text-[#10162C]/75 leading-relaxed text-pretty">
                 {lang === "id"
                   ? "Unduh ringkasan eksekutif, prospektus korporasi, laporan keberlanjutan (ESG & SWEEF Impact), serta pedoman tata kelola perusahaan kami."
                   : "Access our executive summary, corporate prospectus, ESG & SWEEF impact report, and corporate governance charter."}
@@ -425,7 +425,7 @@ export default function InvestorPage() {
               ].map((doc) => (
                 <div
                   key={doc.title.id}
-                  className="bg-white p-6 rounded-3xl border border-[#E0E4E9] hover:border-[#00A79C] shadow-xs flex flex-col justify-between gap-4"
+                  className="bg-white p-6 rounded-3xl border border-[#E0E4E9] hover:border-[#00A79C] flex flex-col justify-between gap-4 transition-colors duration-200"
                 >
                   <div className="space-y-2">
                     <span className="inline-block px-2.5 py-0.5 rounded-full bg-[rgba(0,167,156,0.12)] text-[#00A79C] text-[11px] font-medium">
@@ -441,7 +441,7 @@ export default function InvestorPage() {
                   <button
                     type="button"
                     onClick={() => openQuickModal("prospectus")}
-                    className="w-full py-2.5 px-4 rounded-xl bg-[#E0E4E9]/50 hover:bg-[#F69320] text-[#154C96] hover:text-white text-xs font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-2.5 px-4 rounded-xl bg-[#E0E4E9]/50 hover:bg-[#F69320] text-[#154C96] hover:text-white text-xs font-medium transition-colors duration-200 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <FaFilePdf />
                     <span>
