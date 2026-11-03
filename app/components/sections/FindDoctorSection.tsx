@@ -43,29 +43,29 @@ export const FindDoctorSection: React.FC = () => {
         doc.branchName.toLowerCase().includes(q);
       return matchBranch && matchSpec && matchQuery;
     });
-  }, [doctorBranchFilter, doctorSpecialtyFilter, doctorQuery]);
+  }, [doctorBranchFilter, doctorSpecialtyFilter, doctorQuery, lang]);
 
   return (
     <section id="cari-dokter" className="py-20 lg:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="inline-block px-3.5 py-1 rounded-full bg-[rgba(0,167,156,0.14)] text-[#00A79C] text-xs font-medium uppercase tracking-wider mb-2">
-            {lang === "id"
-              ? "Direktori Dokter Multi-Cabang"
-              : "Multi-Branch Doctor Directory"}
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-semibold text-[#10162C]">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-[#10162C] leading-tight">
             {lang === "id"
               ? "Cari Dokter & Jadwal Praktik di 5 Cabang RS Avisena"
-              : "Find Your Doctor Across All 5 Avisena Hospital Branches"}
+              : "Find Your Doctor Across 5 Avisena Hospital Branches"}
           </h2>
+          <p className="text-sm sm:text-base font-normal text-[#10162C]/75 mt-2">
+            {lang === "id"
+              ? "Direktori dokter spesialis terpercaya yang siap melayani dengan ramah dan profesional."
+              : "Trusted specialist directory ready to care for your family with expertise and empathy."}
+          </p>
         </div>
 
         {/* Filter Bar Menggunakan CustomSelect */}
-        <div className="relative z-30 bg-[#E0E4E9]/55 p-5 sm:p-6 rounded-3xl border border-[#B2B5B3]/50 mb-10">
+        <div className="relative z-30 bg-[#E0E4E9]/45 p-5 sm:p-6 rounded-3xl border border-[#B2B5B3]/50 mb-10">
           <div className="grid sm:grid-cols-2 lg:grid-cols-12 gap-4 items-end">
             <div className="lg:col-span-4">
-              <label className="block text-xs font-medium text-[#10162C]/75 mb-1.5 tracking-wide">
+              <label className="block text-xs font-semibold text-[#10162C]/80 mb-1.5 tracking-wide">
                 {lang === "id"
                   ? "Nama Dokter, Spesialis, atau Rumah Sakit"
                   : "Doctor Name, Specialty, or Hospital"}
@@ -122,7 +122,7 @@ export const FindDoctorSection: React.FC = () => {
                   setDoctorBranchFilter("all");
                   setDoctorSpecialtyFilter("all");
                 }}
-                className="w-full py-3.5 px-4 rounded-2xl bg-[#00A79C] hover:bg-[#154C96] text-white font-medium text-sm transition-colors cursor-pointer flex items-center justify-center gap-2 shadow-xs h-[52px]"
+                className="w-full py-3.5 px-4 rounded-2xl bg-[#00A79C] hover:bg-[#154C96] text-white font-medium text-sm transition-colors duration-200 cursor-pointer flex items-center justify-center gap-2 h-[52px]"
               >
                 <FaMagnifyingGlass />
                 <span>
@@ -138,22 +138,22 @@ export const FindDoctorSection: React.FC = () => {
           {filteredDoctors.map((doc) => (
             <div
               key={doc.id}
-              className="rounded-3xl bg-white border border-[#E0E4E9] hover:border-[#00A79C] shadow-xs hover:shadow-xl transition-all overflow-hidden flex flex-col justify-between group"
+              className="rounded-3xl bg-white border border-[#B2B5B3]/40 hover:border-[#00A79C] transition-colors duration-200 overflow-hidden flex flex-col justify-between group"
             >
               <div>
                 <div className="relative h-60 bg-[#E0E4E9]/50 overflow-hidden">
                   <img
                     src={doc.photo}
                     alt={doc.name}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                   />
-                  <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/95 text-[#154C96] text-[11px] font-medium shadow-2xs">
+                  <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white text-[#154C96] text-xs font-semibold border border-[#B2B5B3]/40">
                     {doc.experienceBadge[lang]}
                   </span>
                 </div>
 
                 <div className="p-5 space-y-2">
-                  <h3 className="text-base font-semibold text-[#10162C] group-hover:text-[#154C96] transition-colors">
+                  <h3 className="text-base font-semibold text-[#10162C] group-hover:text-[#154C96] transition-colors duration-200">
                     {doc.name}
                   </h3>
 
@@ -167,7 +167,7 @@ export const FindDoctorSection: React.FC = () => {
                     <span>{doc.branchName}</span>
                   </div>
 
-                  <div className="flex items-center gap-2 text-[11px] font-light text-[#10162C]/70 pt-1">
+                  <div className="flex items-center gap-2 text-xs font-normal text-[#10162C]/75 pt-1">
                     <FaClock className="text-[#F69320] shrink-0" />
                     <span>{doc.schedule[lang]}</span>
                   </div>
@@ -184,7 +184,7 @@ export const FindDoctorSection: React.FC = () => {
                       doc.branchId
                     )
                   }
-                  className="w-full py-2.5 px-4 rounded-full bg-[#F69320] hover:bg-[#154C96] text-white text-xs font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-2.5 px-4 rounded-full bg-[#F69320] hover:bg-[#154C96] text-white text-xs sm:text-sm font-medium transition-colors duration-200 flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <FaCalendarCheck />
                   <span>
@@ -199,4 +199,3 @@ export const FindDoctorSection: React.FC = () => {
     </section>
   );
 };
-

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -118,7 +118,7 @@ export const BranchDetailModal: React.FC<BranchModalProps> = ({
                   className="w-full h-56 object-cover"
                 />
                 <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-medium text-[#154C96] shadow">
-                  {branch.bedCount} • Umum, BPJS/JKN & Asuransi
+                  {branch.bedCount} â€¢ Umum, BPJS/JKN & Asuransi
                 </div>
               </div>
 
@@ -236,7 +236,7 @@ export const BranchDetailModal: React.FC<BranchModalProps> = ({
                             {doc.name}
                           </p>
                           <p className="text-xs font-normal text-[#00A79C]">
-                            {doc.specialty[lang]} •{" "}
+                            {doc.specialty[lang]} â€¢{" "}
                             <span className="font-light text-[#10162C]/70">
                               {doc.schedule[lang]}
                             </span>
@@ -317,7 +317,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({
   const branchOptions = BRANCHES.map((b) => ({
     value: b.id,
     label: b.name,
-    sublabel: `WA Admin: ${b.whatsappDisplay} • IGD: ${b.phone}`,
+    sublabel: `WA Admin: ${b.whatsappDisplay} â€¢ IGD: ${b.phone}`,
     badge: b.type,
     icon: <FaHospital />,
   }));
@@ -401,7 +401,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({
                         : "Payment, BPJS/JKN & Insurance Coverage")}
                     {modalType === "feedback" &&
                       (lang === "id"
-                        ? "Suara Tetangga — Kotak Saran & Apresiasi"
+                        ? "Suara Tetangga â€” Kotak Saran & Apresiasi"
                         : "Neighbor Feedback & Appreciation")}
                     {modalType === "prospectus" &&
                       (lang === "id"
@@ -409,7 +409,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({
                         : "Corporate Prospectus, GCG & Social Impact Report")}
                   </h3>
                   <p className="text-xs font-light text-[#10162C]/65">
-                    Avisena Healthcare Group • Melayani dengan Sepenuh Hati
+                    Avisena Healthcare Group â€¢ Melayani dengan Sepenuh Hati
                   </p>
                 </div>
               </div>
@@ -450,7 +450,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({
                           <span className="font-medium text-[#10162C]">
                             {b.phone}
                           </span>{" "}
-                          • WA:{" "}
+                          â€¢ WA:{" "}
                           <span className="font-medium text-[#10162C]">
                             {b.whatsappDisplay}
                           </span>
@@ -598,10 +598,10 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({
                         : "Family Visiting Hours (All Branches)"}
                     </h4>
                     <p>
-                      • <span className="font-medium">Sesi Siang:</span> 11.00 –
+                      â€¢ <span className="font-medium">Sesi Siang:</span> 11.00 â€“
                       13.00 WIB
-                      <br />• <span className="font-medium">Sesi Sore:</span>{" "}
-                      17.00 – 19.00 WIB
+                      <br />â€¢ <span className="font-medium">Sesi Sore:</span>{" "}
+                      17.00 â€“ 19.00 WIB
                     </p>
                   </div>
                   <div className="p-4 rounded-2xl bg-[#E0E4E9]/60 space-y-2">
@@ -612,7 +612,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({
                     </h4>
                     <ul className="space-y-1.5 text-xs">
                       <li>
-                        ✓{" "}
+                        âœ“{" "}
                         <span className="font-medium">
                           Gratis Isi Ulang Air Minum:
                         </span>{" "}
@@ -621,7 +621,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({
                         poliklinik.
                       </li>
                       <li>
-                        ✓ Demi kesehatan bersama, anak-anak di bawah usia 12
+                        âœ“ Demi kesehatan bersama, anak-anak di bawah usia 12
                         tahun disarankan tidak masuk ke ruang perawatan
                         intensif.
                       </li>
@@ -706,7 +706,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({
                       SWEEF Impact & IPO Readiness 2026
                     </span>
                     <h4 className="text-lg font-semibold">
-                      Avisena Healthcare Group — Investor & GCG Overview
+                      Avisena Healthcare Group â€” Investor & GCG Overview
                     </h4>
                     <p className="text-xs font-light text-white/85 leading-relaxed">
                       Ringkasan kinerja 5 cabang rumah sakit di Jawa Barat,
@@ -948,7 +948,7 @@ export const FloatingWidgets: React.FC<FloatingWidgetsProps> = ({
           className={`group flex items-center gap-2.5 rounded-full shadow-2xl border-2 border-white transition-all duration-300 cursor-pointer ${
             isRightExpanded
               ? "bg-[#10162C] hover:bg-[#154C96] text-white px-4 py-3"
-              : "bg-gradient-to-r from-[#00A79C] to-[#154C96] hover:from-[#F69320] hover:to-[#154C96] text-white p-3.5 sm:px-5 sm:py-3.5"
+              : "bg-[#00A79C] hover:bg-[#154C96] text-white p-3.5 sm:px-5 sm:py-3.5"
           }`}
         >
           {isRightExpanded ? (
@@ -961,11 +961,11 @@ export const FloatingWidgets: React.FC<FloatingWidgetsProps> = ({
           ) : (
             <>
               <span className="relative flex items-center justify-center">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F69320] opacity-60" />
+                
                 <FaWhatsapp className="relative text-xl" />
               </span>
               <span className="hidden sm:inline text-xs font-medium tracking-wide">
-                {lang === "id" ? "Janji • MCU • WA" : "Book • MCU • WA"}
+                {lang === "id" ? "Janji â€¢ MCU â€¢ WA" : "Book â€¢ MCU â€¢ WA"}
               </span>
             </>
           )}

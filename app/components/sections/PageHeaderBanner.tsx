@@ -20,27 +20,27 @@ export const PageHeaderBanner: React.FC<PageHeaderBannerProps> = ({
   const { lang } = useAvisena();
 
   return (
-    <section className="relative bg-gradient-to-r from-[#154C96] via-[#154C96] to-[#00A79C] text-white py-12 lg:py-16 overflow-hidden border-b-4 border-[#F69320]">
+    <section className="relative bg-[#154C96] text-white py-12 lg:py-16 overflow-hidden border-b-4 border-[#F69320]">
       <SimpulSupergraphic
         variant="outline-white"
         opacity={0.12}
         className="w-80 h-80 absolute -top-16 -right-16 rotate-12"
       />
-      <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10 space-y-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-3">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-xs font-light text-white/80">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm font-normal text-white/80">
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 hover:text-[#F69320] transition-colors"
+            className="inline-flex items-center gap-1.5 hover:text-[#F69320] transition-colors duration-200"
           >
-            <FaHouse className="text-[11px]" />
+            <FaHouse />
             <span>{lang === "id" ? "Beranda" : "Home"}</span>
           </Link>
-          <FaChevronRight className="text-[9px] text-white/50" />
-          <span className="font-medium text-[#F69320]">{badge[lang]}</span>
+          <FaChevronRight className="text-white/50 text-xs" />
+          <span className="font-semibold text-[#F69320]">{badge[lang]}</span>
         </nav>
 
-        <span className="inline-block px-3.5 py-1 rounded-full bg-white/15 text-white text-xs font-medium uppercase tracking-wider">
+        <span className="inline-block px-3.5 py-1 rounded-full bg-white/15 text-white text-xs font-semibold">
           {badge[lang]}
         </span>
 
@@ -48,11 +48,10 @@ export const PageHeaderBanner: React.FC<PageHeaderBannerProps> = ({
           {title[lang]}
         </h1>
 
-        <p className="text-sm sm:text-base font-light text-white/85 max-w-2xl leading-relaxed">
+        <p className="text-sm sm:text-base font-normal text-white/90 max-w-2xl leading-relaxed">
           {subtitle[lang]}
         </p>
       </div>
     </section>
   );
 };
-

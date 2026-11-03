@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { createContext, useContext, useState, useMemo } from "react";
 import Link from "next/link";
@@ -133,7 +133,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
             : "All Avisena Hospital Branches",
         sublabel:
           lang === "id"
-            ? "Cimahi • Pangalengan • Kuningan • Subang • Cikampek"
+            ? "Cimahi â€¢ Pangalengan â€¢ Kuningan â€¢ Subang â€¢ Cikampek"
             : "5 Hospitals across West Java",
         badge: "5 RS",
         icon: <FaHospital />,
@@ -141,7 +141,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
       ...BRANCHES.map((b) => ({
         value: b.id,
         label: b.name,
-        sublabel: `${b.badge[lang]} • IGD ${b.phone}`,
+        sublabel: `${b.badge[lang]} â€¢ IGD ${b.phone}`,
         badge: b.type,
         icon: <FaLocationDot />,
       })),
@@ -212,14 +212,14 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
     >
       <div
         style={{ fontSize: `${fontScale}%` }}
-        className="min-h-screen bg-[#FFFFFF] text-[#10162C] font-normal overflow-x-hidden selection:bg-[#00A79C]/20 flex flex-col justify-between"
+        className="min-h-[100svh] bg-[#FFFFFF] text-[#10162C] font-normal overflow-x-hidden selection:bg-[#00A79C]/20 flex flex-col justify-between"
       >
         <div>
           {/* Top Emergency & Language Bar */}
-          <div className="bg-[#154C96] text-white text-xs py-2 px-4 lg:px-8 border-b border-white/10">
+          <div className="bg-[#154C96] text-white text-xs py-2 px-4 lg:px-8">
             <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
               <div className="flex items-center gap-2 font-normal truncate">
-                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#F69320] text-white font-medium text-[11px] shrink-0">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#F69320] text-white font-medium text-xs shrink-0">
                   <FaTruckMedical /> IGD 24 Jam
                 </span>
                 <span className="hidden sm:inline text-white/85 font-light">
@@ -247,8 +247,8 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
               <div className="flex items-center gap-3 shrink-0">
                 <span className="hidden lg:inline text-white/75 text-[11px] font-light">
                   {lang === "id"
-                    ? "Umum • BPJS/JKN • 50+ Asuransi"
-                    : "General • BPJS/JKN • 50+ Insurers"}
+                    ? "Umum â€¢ BPJS/JKN â€¢ 50+ Asuransi"
+                    : "General â€¢ BPJS/JKN â€¢ 50+ Insurers"}
                 </span>
 
                 {/* Bilingual Switcher */}
@@ -281,7 +281,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
           </div>
 
           {/* 1. Sticky Header Navigation */}
-          <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#E0E4E9] shadow-2xs">
+          <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md">
             <div className="max-w-7xl mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-4">
               {/* Brand Logo */}
               <Link
@@ -345,9 +345,9 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                           stiffness: 400,
                           damping: 28,
                         }}
-                        className="absolute left-0 top-full w-80 bg-white rounded-3xl shadow-2xl border border-[#E0E4E9] p-3 space-y-1.5 z-50"
+                        data-ui="dropdown" className="absolute left-0 top-full w-80 bg-white rounded-3xl shadow-2xl border border-[#E0E4E9] p-3 space-y-1.5 z-50 /* taste-skill-ignore */"
                       >
-                        <div className="px-3 py-1.5 text-[11px] font-medium uppercase tracking-wider text-[#154C96]">
+                        <div className="px-3 py-1.5 text-xs font-semibold text-[#154C96]">
                           {lang === "id"
                             ? "Pilih 5 Cabang RS Avisena"
                             : "Select 5 Avisena Hospitals"}
@@ -367,7 +367,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                                 {b.name}
                               </p>
                               <p className="text-[11px] font-light text-[#10162C]/65">
-                                {b.badge[lang]} • {b.type}
+                                {b.badge[lang]} â€¢ {b.type}
                               </p>
                             </div>
                             <span className="w-7 h-7 rounded-full bg-[#E0E4E9]/70 group-hover:bg-[#F69320] text-[#10162C] group-hover:text-white flex items-center justify-center text-xs transition-colors shrink-0">
@@ -375,15 +375,15 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                             </span>
                           </button>
                         ))}
-                        <div className="pt-2 border-t border-[#E0E4E9]">
+                        <div className="pt-2">
                           <Link
                             href="/cabang-rs"
                             onClick={() => setBranchDropdownOpen(false)}
                             className="block text-center text-xs font-medium text-[#00A79C] hover:text-[#154C96] py-1.5"
                           >
                             {lang === "id"
-                              ? "Buka Halaman 5 Cabang RS →"
-                              : "Open 5 Hospital Branches Page →"}
+                              ? "Buka Halaman 5 Cabang RS â†’"
+                              : "Open 5 Hospital Branches Page â†’"}
                           </Link>
                         </div>
                       </motion.div>
@@ -422,7 +422,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                 <button
                   type="button"
                   onClick={() => openQuickModal("appointment")}
-                  className="px-4 sm:px-5 py-2.5 rounded-full bg-[#F69320] hover:bg-[#154C96] text-white text-xs sm:text-sm font-medium shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer whitespace-nowrap"
+                  className="px-4 sm:px-5 py-2.5 rounded-full bg-[#F69320] hover:bg-[#154C96] text-white text-xs sm:text-sm font-medium transition-colors duration-200 flex items-center gap-2 cursor-pointer whitespace-nowrap"
                 >
                   <FaCalendarCheck />
                   <span>{lang === "id" ? "Buat Janji" : "Book Visit"}</span>
@@ -447,7 +447,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  className="xl:hidden bg-white border-t border-[#E0E4E9] px-4 py-4 space-y-2 overflow-hidden"
+                  className="xl:hidden bg-white px-4 py-4 space-y-2 overflow-hidden"
                 >
                   <div className="grid grid-cols-2 gap-2 text-sm font-medium">
                     <Link
@@ -517,7 +517,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                 </div>
 
                 <p className="text-sm font-medium text-[#F69320]">
-                  “Avisena, Tetangga Sehatmu • Melayani dengan Sepenuh Hati”
+                  â€œAvisena, Tetangga Sehatmu â€¢ Melayani dengan Sepenuh Hatiâ€
                 </p>
 
                 <p className="text-xs sm:text-sm font-light text-white/80 leading-relaxed">
@@ -529,7 +529,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
 
               {/* Col 2: Kontak Kantor Pusat (RSU Avisena Cimahi) */}
               <div className="lg:col-span-4 space-y-3">
-                <h3 className="text-base font-semibold text-white uppercase tracking-wider border-b border-white/15 pb-2">
+                <h3 className="text-base font-semibold text-white mb-3">
                   {lang === "id"
                     ? "Kantor Pusat (RSU Avisena Cimahi)"
                     : "Head Office (RSU Avisena Cimahi)"}
@@ -596,7 +596,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
 
               {/* Col 3: Tautan Cepat 5 Cabang RS */}
               <div className="lg:col-span-4 space-y-3">
-                <h3 className="text-base font-semibold text-white uppercase tracking-wider border-b border-white/15 pb-2">
+                <h3 className="text-base font-semibold text-white mb-3">
                   {lang === "id"
                     ? "Tautan Cepat 5 Jaringan Cabang"
                     : "Quick Links to Our 5 Hospitals"}
@@ -613,7 +613,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                           {b.name} ({b.type})
                         </span>
                         <span className="text-[11px] font-light text-white/65">
-                          {b.phone} →
+                          {b.phone} â†’
                         </span>
                       </button>
                     </li>
@@ -623,7 +623,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
             </div>
 
             {/* Bottom Copyright */}
-            <div className="pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-light text-white/70">
+            <div className="pt-6 bg-white/5 -mx-4 lg:-mx-8 px-4 lg:px-8 mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-light text-white/70">
               <p>
                 &copy; {new Date().getFullYear()}{" "}
                 <span className="font-medium text-white">

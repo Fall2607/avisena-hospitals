@@ -12,24 +12,24 @@ export const QuickServicesSection: React.FC = () => {
 
   return (
     <section className="relative z-10 py-16 lg:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <div>
-            <span className="inline-block px-3.5 py-1 rounded-full bg-[rgba(0,167,156,0.14)] text-[#00A79C] text-xs font-medium uppercase tracking-wider mb-2">
-              {lang === "id"
-                ? "Layanan Cepat Pasien"
-                : "Quick Patient Services"}
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-semibold text-[#10162C]">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-[#10162C] leading-tight">
               {lang === "id"
                 ? "Apa yang Bisa Tetangga Sehatmu Bantu Hari Ini?"
                 : "How Can Your Healthy Neighbor Help You Today?"}
             </h2>
+            <p className="text-sm sm:text-base font-normal text-[#10162C]/75 mt-2">
+              {lang === "id"
+                ? "Layanan Cepat Pasien: satu sentuhan untuk kebutuhan harian tanpa antrean panjang."
+                : "Quick Patient Access: one-touch pathways for everyday care without confusing terms."}
+            </p>
           </div>
           <p className="text-sm font-normal text-[#10162C]/70 max-w-md">
             {lang === "id"
-              ? "Akses cepat satu sentuhan untuk kebutuhan harian pasien dan keluarga tanpa istilah medis yang membingungkan."
-              : "One-touch access for your everyday healthcare needs, designed with clarity and warmth."}
+              ? "Akses langsung terhubung ke layanan IGD 24 jam, pendaftaran poliklinik, konsultasi dokter, dan informasi BPJS."
+              : "Direct access connected to 24/7 ER, polyclinic booking, doctor consultation, and BPJS information."}
           </p>
         </div>
 
@@ -49,25 +49,25 @@ export const QuickServicesSection: React.FC = () => {
                   openQuickModal(item.actionType);
                 }
               }}
-              className={`group relative p-7 rounded-3xl border ${item.bgClass} hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[220px] cursor-pointer`}
+              className={`group relative p-7 rounded-3xl border border-[#B2B5B3]/40 ${item.bgClass} hover:border-[#00A79C] transition-colors duration-200 flex flex-col justify-between min-h-[220px] cursor-pointer`}
             >
               <div>
-                <span className="inline-block px-3 py-1 rounded-full bg-white/90 text-[#154C96] text-xs font-medium mb-4 shadow-2xs">
+                <span className="inline-block px-3.5 py-1 rounded-full bg-white text-[#154C96] text-xs font-semibold mb-4 border border-[#B2B5B3]/40">
                   {item.tag[lang]}
                 </span>
-                <h3 className="text-xl font-semibold text-[#10162C] group-hover:text-[#154C96] transition-colors">
+                <h3 className="text-xl font-semibold text-[#10162C] group-hover:text-[#154C96] transition-colors duration-200">
                   {item.title[lang]}
                 </h3>
-                <p className="text-sm font-normal text-[#10162C]/75 mt-2 leading-relaxed pr-10">
+                <p className="text-sm font-normal text-[#10162C]/80 mt-2 leading-relaxed pr-8">
                   {item.subtitle[lang]}
                 </p>
               </div>
 
               <div className="flex items-center justify-between pt-6">
-                <span className="text-xs font-medium text-[#154C96] group-hover:underline">
+                <span className="text-sm font-medium text-[#154C96] group-hover:underline">
                   {lang === "id" ? "Buka Layanan" : "Open Service"}
                 </span>
-                <span className="w-11 h-11 rounded-full bg-[#F69320] group-hover:bg-[#154C96] text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-all">
+                <span className="w-11 h-11 rounded-full bg-[#F69320] group-hover:bg-[#154C96] text-white flex items-center justify-center transition-colors duration-200">
                   <FaArrowRight />
                 </span>
               </div>
@@ -78,4 +78,3 @@ export const QuickServicesSection: React.FC = () => {
     </section>
   );
 };
-
