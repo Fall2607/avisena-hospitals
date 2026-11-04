@@ -149,7 +149,7 @@ export const SpecialtiesSection: React.FC = () => {
                     icon: <FaChildren />,
                   },
                   {
-                    id: "penyakit-kritis" as const,
+                    id: "dewasa-jantung" as const,
                     title: {
                       id: "Jantung & Saraf",
                       en: "Cardio & Neuro",
@@ -161,7 +161,7 @@ export const SpecialtiesSection: React.FC = () => {
                     icon: <FaHeartPulse />,
                   },
                   {
-                    id: "bedah-trauma" as const,
+                    id: "bedah-indra" as const,
                     title: {
                       id: "Bedah & Penyakit Dalam",
                       en: "Surgery & Internal",
@@ -173,7 +173,7 @@ export const SpecialtiesSection: React.FC = () => {
                     icon: <FaStethoscope />,
                   },
                   {
-                    id: "gawat-darurat" as const,
+                    id: "darurat-mcu" as const,
                     title: {
                       id: "IGD & Penunjang 24 Jam",
                       en: "24/7 ER & Support",
