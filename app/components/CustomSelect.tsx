@@ -62,13 +62,13 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
     <div
       ref={containerRef}
       className={clsx(
-        "relative w-full",
+        "relative w-full min-w-0 max-w-full",
         isOpen ? "z-50" : "z-10",
         className
       )}
     >
       {label && (
-        <label className="block text-xs font-semibold text-[#10162C]/75 mb-1.5 tracking-wide">
+        <label className="block text-xs font-semibold text-[#10162C]/75 mb-1.5 tracking-wide truncate">
           {label}
         </label>
       )}
@@ -80,45 +80,45 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
         aria-haspopup="listbox"
         aria-expanded={isOpen}
         className={clsx(
-          "w-full px-4 py-3 rounded-2xl bg-white border text-left flex items-center justify-between gap-3 transition-colors duration-200 cursor-pointer",
+          "w-full min-w-0 max-w-full px-3.5 sm:px-4 py-3 rounded-2xl bg-white border text-left flex items-center justify-between gap-2.5 sm:gap-3 transition-colors duration-200 cursor-pointer overflow-hidden",
           isOpen
             ? "border-[#00A79C] ring-3 ring-[#00A79C]/15"
             : "border-[#B2B5B3]/60 hover:border-[#00A79C]/70"
         )}
       >
-        <div className="flex items-center gap-2.5 min-w-0">
+        <div className="flex items-center gap-2.5 min-w-0 flex-1 overflow-hidden">
           {icon && (
             <span className="text-[#00A79C] text-base shrink-0">{icon}</span>
           )}
-          <div className="truncate">
-            <span className="block text-sm font-medium text-[#10162C] truncate">
+          <div className="min-w-0 flex-1 overflow-hidden">
+            <span className="block text-sm font-medium text-[#10162C] truncate w-full">
               {selectedOption ? selectedOption.label : placeholder}
             </span>
             {selectedOption?.sublabel && (
-              <span className="block text-xs font-normal text-[#10162C]/65 truncate">
+              <span className="block text-xs font-normal text-[#10162C]/65 truncate w-full">
                 {selectedOption.sublabel}
               </span>
             )}
           </div>
         </div>
 
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0 ml-1">
           {selectedOption?.badge && (
-            <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[rgba(0,167,156,0.12)] text-[#00A79C]">
+            <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[rgba(0,167,156,0.12)] text-[#00A79C] shrink-0">
               {selectedOption.badge}
             </span>
           )}
           <motion.span
             animate={{ rotate: isOpen ? 180 : 0 }}
             transition={{ duration: 0.2 }}
-            className="w-6 h-6 rounded-full bg-[#E0E4E9]/60 text-[#154C96] flex items-center justify-center text-xs"
+            className="w-6 h-6 rounded-full bg-[#E0E4E9]/60 text-[#154C96] flex items-center justify-center text-xs shrink-0"
           >
             <FaChevronDown />
           </motion.span>
         </div>
       </button>
 
-      {/* Animated Dropdown Menu (Overlays are allowed floating shadows) */}
+      {/* Animated Dropdown Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -128,7 +128,7 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
             transition={{ type: "spring", stiffness: 420, damping: 28 }}
             role="listbox"
             data-ui="dropdown"
-            className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 bg-white rounded-2xl shadow-2xl border border-[#E0E4E9] p-2 max-h-72 overflow-y-auto space-y-1 /* taste-skill-ignore */"
+            className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 bg-white rounded-2xl shadow-2xl border border-[#E0E4E9] p-2 max-h-72 overflow-y-auto space-y-1 w-full max-w-full /* taste-skill-ignore */"
           >
             {options.map((opt) => {
               const isSelected = opt.value === value;
@@ -143,13 +143,13 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
                     setIsOpen(false);
                   }}
                   className={clsx(
-                    "w-full px-3.5 py-2.5 rounded-xl text-left flex items-center justify-between gap-3 transition-colors cursor-pointer",
+                    "w-full min-w-0 max-w-full px-3 sm:px-3.5 py-2.5 rounded-xl text-left flex items-center justify-between gap-2.5 transition-colors cursor-pointer overflow-hidden",
                     isSelected
                       ? "bg-[rgba(0,167,156,0.14)] text-[#154C96]"
                       : "hover:bg-[#E0E4E9]/50 text-[#10162C]"
                   )}
                 >
-                  <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="flex items-center gap-2.5 min-w-0 flex-1 overflow-hidden">
                     {opt.icon && (
                       <span
                         className={clsx(
@@ -160,28 +160,28 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
                         {opt.icon}
                       </span>
                     )}
-                    <div className="min-w-0">
+                    <div className="min-w-0 flex-1 overflow-hidden">
                       <p
                         className={clsx(
-                          "text-sm truncate",
+                          "text-sm truncate w-full",
                           isSelected ? "font-semibold" : "font-normal"
                         )}
                       >
                         {opt.label}
                       </p>
                       {opt.sublabel && (
-                        <p className="text-xs font-normal text-[#10162C]/65 truncate">
+                        <p className="text-xs font-normal text-[#10162C]/65 truncate w-full">
                           {opt.sublabel}
                         </p>
                       )}
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 shrink-0">
+                  <div className="flex items-center gap-1.5 sm:gap-2 shrink-0 ml-1">
                     {opt.badge && (
                       <span
                         className={clsx(
-                          "px-2 py-0.5 rounded-full text-xs font-semibold",
+                          "px-2 py-0.5 rounded-full text-xs font-semibold shrink-0",
                           isSelected
                             ? "bg-[#00A79C] text-white"
                             : "bg-[#E0E4E9]/80 text-[#154C96]"
@@ -191,7 +191,7 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
                       </span>
                     )}
                     {isSelected && (
-                      <span className="w-5 h-5 rounded-full bg-[#00A79C] text-white flex items-center justify-center text-xs">
+                      <span className="w-5 h-5 rounded-full bg-[#00A79C] text-white flex items-center justify-center text-xs shrink-0">
                         <FaCheck />
                       </span>
                     )}

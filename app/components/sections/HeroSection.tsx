@@ -202,10 +202,10 @@ export const HeroSection: React.FC = () => {
 
           <form
             onSubmit={handleHeroQuickSearch}
-            className="grid sm:grid-cols-2 lg:grid-cols-12 gap-4 items-end"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3.5 sm:gap-4 items-end w-full min-w-0"
           >
             {/* CustomSelect 1: Lokasi Cabang RS */}
-            <div className="lg:col-span-5">
+            <div className="w-full min-w-0 lg:col-span-5">
               <CustomSelect
                 label={
                   lang === "id"
@@ -220,7 +220,7 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* CustomSelect 2: Poliklinik / Spesialis */}
-            <div className="lg:col-span-4">
+            <div className="w-full min-w-0 lg:col-span-4">
               <CustomSelect
                 label={
                   lang === "id"
@@ -235,10 +235,10 @@ export const HeroSection: React.FC = () => {
             </div>
 
             {/* Button: Cari Jadwal Dokter (#F69320) */}
-            <div className="sm:col-span-2 lg:col-span-3">
+            <div className="w-full min-w-0 sm:col-span-2 lg:col-span-3">
               <button
                 type="submit"
-                className="w-full py-3.5 px-6 rounded-2xl bg-[#F69320] hover:bg-[#154C96] text-white font-medium text-sm transition-colors duration-200 flex items-center justify-center gap-2 cursor-pointer h-[52px]"
+                className="w-full min-w-0 max-w-full py-3.5 px-6 rounded-2xl bg-[#F69320] hover:bg-[#154C96] text-white font-medium text-sm transition-colors duration-200 flex items-center justify-center gap-2 cursor-pointer h-[52px]"
               >
                 <FaMagnifyingGlass />
                 <span>

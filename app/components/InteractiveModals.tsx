@@ -57,7 +57,7 @@ export const BranchDetailModal: React.FC<BranchModalProps> = ({
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", stiffness: 320, damping: 32 }}
-            className="relative w-full max-w-2xl h-full bg-white shadow-2xl overflow-y-auto p-6 md:p-10 border-l-4 border-[#00A79C]"
+            className="relative w-full max-w-2xl h-full bg-white shadow-2xl overflow-y-auto p-6 md:p-10 border-l border-[#00A79C]/30"
             onClick={(e) => e.stopPropagation()}
           >
             <SimpulSupergraphic
@@ -515,7 +515,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({
                     />
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                       <label className="block text-xs font-medium text-[#10162C]/75 mb-1.5">
                         {modalType === "medicine"
@@ -555,7 +555,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({
                         ? "Jenis Penjaminan / Pembayaran"
                         : "Coverage / Payment Type"}
                     </label>
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                       {[
                         "BPJS Kesehatan (JKN)",
                         "Pasien Umum",

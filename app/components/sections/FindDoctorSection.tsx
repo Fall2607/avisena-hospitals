@@ -62,15 +62,15 @@ export const FindDoctorSection: React.FC = () => {
         </div>
 
         {/* Filter Bar Menggunakan CustomSelect */}
-        <div className="relative z-30 bg-[#E0E4E9]/45 p-5 sm:p-6 rounded-3xl border border-[#B2B5B3]/50 mb-10">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-12 gap-4 items-end">
-            <div className="lg:col-span-4">
+        <div className="relative z-30 bg-[#E0E4E9]/45 p-4 sm:p-6 rounded-3xl border border-[#B2B5B3]/50 mb-10 w-full max-w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3.5 sm:gap-4 items-end w-full min-w-0">
+            <div className="w-full min-w-0 lg:col-span-4">
               <label className="block text-xs font-semibold text-[#10162C]/80 mb-1.5 tracking-wide">
                 {lang === "id"
                   ? "Nama Dokter, Spesialis, atau Rumah Sakit"
                   : "Doctor Name, Specialty, or Hospital"}
               </label>
-              <div className="relative">
+              <div className="relative w-full min-w-0">
                 <FaUserDoctor className="absolute left-4 top-1/2 -translate-y-1/2 text-[#00A79C]" />
                 <input
                   type="text"
@@ -81,12 +81,12 @@ export const FindDoctorSection: React.FC = () => {
                       ? "Ketik nama dokter atau spesialis..."
                       : "Type doctor name or specialty..."
                   }
-                  className="w-full pl-11 pr-4 py-3.5 rounded-2xl bg-white border border-[#B2B5B3]/60 text-sm font-normal text-[#10162C] focus:outline-none focus:border-[#00A79C] h-[52px]"
+                  className="w-full min-w-0 max-w-full pl-11 pr-4 py-3.5 rounded-2xl bg-white border border-[#B2B5B3]/60 text-sm font-normal text-[#10162C] focus:outline-none focus:border-[#00A79C] h-[52px]"
                 />
               </div>
             </div>
 
-            <div className="lg:col-span-3">
+            <div className="w-full min-w-0 lg:col-span-3">
               <CustomSelect
                 label={
                   lang === "id"
@@ -100,7 +100,7 @@ export const FindDoctorSection: React.FC = () => {
               />
             </div>
 
-            <div className="lg:col-span-3">
+            <div className="w-full min-w-0 lg:col-span-3">
               <CustomSelect
                 label={
                   lang === "id"
@@ -114,7 +114,7 @@ export const FindDoctorSection: React.FC = () => {
               />
             </div>
 
-            <div className="sm:col-span-2 lg:col-span-2 flex gap-2">
+            <div className="w-full min-w-0 sm:col-span-2 lg:col-span-2 flex gap-2">
               <button
                 type="button"
                 onClick={() => {
@@ -122,7 +122,7 @@ export const FindDoctorSection: React.FC = () => {
                   setDoctorBranchFilter("all");
                   setDoctorSpecialtyFilter("all");
                 }}
-                className="w-full py-3.5 px-4 rounded-2xl bg-[#00A79C] hover:bg-[#154C96] text-white font-medium text-sm transition-colors duration-200 cursor-pointer flex items-center justify-center gap-2 h-[52px]"
+                className="w-full min-w-0 max-w-full py-3.5 px-4 rounded-2xl bg-[#00A79C] hover:bg-[#154C96] text-white font-medium text-sm transition-colors duration-200 cursor-pointer flex items-center justify-center gap-2 h-[52px]"
               >
                 <FaMagnifyingGlass />
                 <span>

@@ -80,7 +80,7 @@ export const SpecialtiesSection: React.FC = () => {
             </div>
 
             {/* Toggle Category */}
-            <div className="inline-flex rounded-full bg-white p-1.5 border border-[#B2B5B3]/50 self-start">
+            <div className="flex flex-wrap sm:inline-flex rounded-2xl sm:rounded-full bg-white p-1.5 border border-[#B2B5B3]/50 self-start max-w-full gap-1">
               {[
                 {
                   id: "all",
@@ -225,10 +225,10 @@ export const SpecialtiesSection: React.FC = () => {
             </div>
 
             {/* Row 2: Pencarian Keluhan + Filter Ketersediaan Cabang RS */}
-            <div className="pt-4 bg-[#E0E4E9]/20 p-4 rounded-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div className="pt-4 bg-[#E0E4E9]/20 p-4 rounded-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-4 w-full min-w-0">
               {/* Search Input */}
-              <div className="flex-1 space-y-2.5">
-                <div className="relative">
+              <div className="flex-1 w-full min-w-0 space-y-2.5">
+                <div className="relative w-full min-w-0">
                   <FaMagnifyingGlass className="absolute left-4 top-1/2 -translate-y-1/2 text-[#00A79C]" />
                   <input
                     type="text"
@@ -239,13 +239,13 @@ export const SpecialtiesSection: React.FC = () => {
                         ? "Ketik keluhan atau layanan (contoh: USG 4D, Demam Anak, Vertigo, Diabetes, MCU)..."
                         : "Type a symptom or clinic (e.g., 4D Ultrasound, Child Fever, Vertigo, Diabetes, MCU)..."
                     }
-                    className="w-full pl-11 pr-10 py-3 rounded-2xl bg-white border border-[#B2B5B3]/60 text-xs sm:text-sm font-normal focus:outline-none focus:border-[#00A79C] transition-colors"
+                    className="w-full min-w-0 max-w-full pl-11 pr-10 py-3 rounded-2xl bg-white border border-[#B2B5B3]/60 text-xs sm:text-sm font-normal focus:outline-none focus:border-[#00A79C] transition-colors"
                   />
                   {serviceSearch && (
                     <button
                       type="button"
                       onClick={() => setServiceSearch("")}
-                      className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#10162C]/50 hover:text-[#10162C] text-sm"
+                      className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#10162C]/50 hover:text-[#10162C] text-sm cursor-pointer"
                     >
                       <FaXmark />
                     </button>
@@ -254,7 +254,7 @@ export const SpecialtiesSection: React.FC = () => {
               </div>
 
               {/* Branch Availability Pills */}
-              <div className="shrink-0 space-y-1.5">
+              <div className="w-full lg:w-auto shrink-0 space-y-1.5">
                 <p className="text-xs font-semibold text-[#154C96]">
                   {lang === "id"
                     ? "2. Filter Cabang RS:"
