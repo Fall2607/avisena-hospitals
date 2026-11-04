@@ -90,7 +90,7 @@ export const FindDoctorSection: React.FC = () => {
               <CustomSelect
                 label={
                   lang === "id"
-                    ? "Pilih Cabang Rumah Sakit"
+                    ? "Pilih Rumah Sakit"
                     : "Select Hospital Branch"
                 }
                 value={doctorBranchFilter}

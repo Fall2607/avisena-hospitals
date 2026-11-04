@@ -26,7 +26,7 @@ export const CareersSection: React.FC = () => {
                   <>
                     <span>Mari Mengabdi &amp; Bertumbuh Bersama Avisena</span>
                     <span className="block text-[#00A79C] font-medium text-xl sm:text-2xl mt-1">
-                      Karir Pelayanan Kesehatan di 5 Cabang RS Jawa Barat
+                      Karir Pelayanan Kesehatan di 5 Rumah Sakit Avisena
                     </span>
                   </>
                 ) : (

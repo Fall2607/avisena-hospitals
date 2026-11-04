@@ -111,7 +111,7 @@ export default function KomunitasPage() {
                 <FaSeedling />
               </div>
               <div>
-                <p className="text-xl font-bold text-[#10162C]">5 Cabang</p>
+                <p className="text-xl font-bold text-[#10162C]">5 Cabang RS</p>
                 <p className="text-xs font-normal text-[#10162C]/70">
                   {lang === "id"
                     ? "Isi Ulang Air Tumbler Gratis"

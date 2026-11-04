@@ -63,7 +63,7 @@ export default function KarirPage() {
                 <FaBriefcaseMedical />
                 <span>
                   {lang === "id"
-                    ? "Karir Insan Avisena • 5 Cabang Jawa Barat"
+                    ? "Karir Insan Avisena • 5 Rumah Sakit Jawa Barat"
                     : "Avisena Careers • 5 Hospitals in West Java"}
                 </span>
               </span>
@@ -163,7 +163,7 @@ export default function KarirPage() {
         </div>
       </section>
 
-      {/* 3. Papan Lowongan Kerja Interaktif dengan Filter Cabang */}
+      {/* 3. Papan Lowongan Kerja Interaktif dengan Filter Member RS */}
       <section className="py-20 bg-[#E0E4E9]/45">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 space-y-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -175,7 +175,7 @@ export default function KarirPage() {
               </span>
               <h2 className="text-2xl sm:text-3xl font-semibold text-[#10162C] text-balance">
                 {lang === "id"
-                  ? "Pilih Lokasi Penempatan Cabang RS Avisena"
+                  ? "Pilih Lokasi Penempatan Cabang RS"
                   : "Filter Openings by Hospital Placement"}
               </h2>
             </div>

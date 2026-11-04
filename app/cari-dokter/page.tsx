@@ -47,7 +47,7 @@ export default function CariDokterPage() {
           <div className="max-w-3xl space-y-3">
             <span className="inline-block px-3.5 py-1 rounded-full bg-[#154C96] text-white text-xs font-medium">
               {lang === "id"
-                ? "Reservasi Terpadu 5 Cabang RS Avisena"
+                ? "Reservasi Terpadu 5 Rumah Sakit Avisena"
                 : "Unified Booking Across 5 Avisena Hospitals"}
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#10162C] leading-tight text-balance">
@@ -64,7 +64,7 @@ export default function CariDokterPage() {
         </div>
       </section>
 
-      {/* 2. Direktori & Filter Dokter Multi-Cabang */}
+      {/* 2. Direktori & Filter Dokter Multi-Member */}
       <FindDoctorSection />
 
       {/* 3. Papan Pengumuman Perubahan Jadwal Praktik Terkini */}

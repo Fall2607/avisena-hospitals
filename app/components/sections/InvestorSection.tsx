@@ -51,7 +51,7 @@ export const InvestorSection: React.FC = () => {
               </div>
               <h3 className="text-2xl font-semibold">
                 {lang === "id"
-                  ? "Branch Expansion (Ekspansi Cabang)"
+                  ? "Hospital Network & Expansion"
                   : "Branch Expansion"}
               </h3>
               <p className="text-sm font-normal text-white/85 leading-relaxed">

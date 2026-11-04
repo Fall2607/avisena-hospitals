@@ -80,7 +80,7 @@ export const BranchDetailModal: React.FC<BranchModalProps> = ({
               </div>
               <button
                 onClick={onClose}
-                aria-label="Tutup detail cabang"
+                aria-label="Tutup detail rumah sakit"
                 className="w-11 h-11 rounded-full bg-[#E0E4E9]/70 hover:bg-[#F69320] text-[#10162C] hover:text-white flex items-center justify-center transition-colors cursor-pointer shrink-0"
               >
                 <FaXmark className="text-lg" />
@@ -102,6 +102,11 @@ export const BranchDetailModal: React.FC<BranchModalProps> = ({
               </div>
 
               <div>
+                <p className="text-xs font-semibold text-[#00A79C] mb-0.5">
+                  {lang === "id"
+                    ? "Member dari Avisena Healthcare Group"
+                    : "Member of Avisena Healthcare Group"}
+                </p>
                 <h2 className="text-2xl md:text-3xl font-semibold text-[#10162C]">
                   {branch.name}
                 </h2>
@@ -381,7 +386,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({
                   <h3 className="text-lg sm:text-xl font-semibold text-[#10162C]">
                     {modalType === "whatsapp-directory" &&
                       (lang === "id"
-                        ? "Hubungi Tetangga Sehatmu (5 Cabang)"
+                        ? "Hubungi Tetangga Sehatmu (5 Cabang RS)"
                         : "Contact Your Healthy Neighbor (5 Branches)")}
                     {modalType === "appointment" &&
                       (lang === "id"
@@ -486,7 +491,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({
                   <CustomSelect
                     label={
                       lang === "id"
-                        ? "1. Pilih Lokasi Cabang RS Avisena"
+                        ? "1. Pilih Lokasi Rumah Sakit"
                         : "1. Select Avisena Hospital Branch"
                     }
                     value={selectedBranchId}
@@ -709,7 +714,7 @@ export const QuickActionModal: React.FC<QuickActionModalProps> = ({
                       Avisena Healthcare Group — Investor & GCG Overview
                     </h4>
                     <p className="text-xs font-light text-white/85 leading-relaxed">
-                      Ringkasan kinerja 5 cabang rumah sakit di Jawa Barat,
+                      Ringkasan kinerja 5 rumah sakit jaringan Avisena di Jawa Barat,
                       dampak pemberdayaan kepemimpinan perempuan (dr. Lia
                       Yuliana Elsis), kemitraan koperasi KPBS Pangalengan, serta
                       peta jalan ekspansi dan tata kelola perusahaan (Good

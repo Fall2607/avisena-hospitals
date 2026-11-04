@@ -33,7 +33,7 @@ export default function CabangRsPage() {
 
   return (
     <div className="bg-white">
-      {/* 1. Warm Header Khusus Jaringan Cabang RS (Solid flat surface) */}
+      {/* 1. Warm Header Khusus Jaringan Member dari Avisena Healthcare Group (Solid flat surface) */}
       <section className="relative bg-[#E0E4E9]/35 pt-10 pb-14 lg:pt-14 lg:pb-16 overflow-hidden">
         <SimpulSupergraphic
           variant="outline-tosca"
@@ -51,7 +51,7 @@ export default function CabangRsPage() {
             </Link>
             <FaChevronRight className="text-[9px] text-[#10162C]/40" />
             <span className="font-medium text-[#154C96]">
-              {lang === "id" ? "5 Cabang Rumah Sakit" : "5 Hospital Branches"}
+              {lang === "id" ? "Member RS" : "5 Member Hospitals"}
             </span>
           </nav>
 
@@ -59,17 +59,17 @@ export default function CabangRsPage() {
             <div className="space-y-3 max-w-3xl">
               <span className="inline-block px-3.5 py-1 rounded-full bg-[#00A79C] text-white text-xs font-medium">
                 {lang === "id"
-                  ? "Jaringan Rumah Sakit Avisena • Jawa Barat"
+                  ? "Jaringan Member Avisena • Jawa Barat"
                   : "Avisena Hospital Network • West Java"}
               </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#10162C] leading-tight text-balance">
                 {lang === "id"
-                  ? "Eksplorasi Lokasi, Poliklinik & Fasilitas 5 Cabang RS Avisena"
+                  ? "Eksplorasi Lokasi, Poliklinik & Fasilitas 5 Member RS Avisena"
                   : "Explore Locations, Polyclinics & Facilities Across Our 5 Hospitals"}
               </h1>
               <p className="text-sm sm:text-base font-normal text-[#10162C]/75 leading-relaxed text-pretty">
                 {lang === "id"
-                  ? "Pilih kota cabang di bawah ini untuk melihat detail poliklinik spesialis, nomor darurat IGD 24 Jam, peta navigasi Google Maps, serta perbandingan fasilitas tiap rumah sakit."
+                  ? "Pilih cabang rumah sakit di bawah ini untuk melihat detail poliklinik spesialis, nomor darurat IGD 24 Jam, peta navigasi Google Maps, serta perbandingan fasilitas tiap rumah sakit."
                   : "Select a city branch below to inspect its specialist clinics, 24/7 emergency contacts, Google Maps directions, and facility comparison."}
               </p>
             </div>
@@ -109,7 +109,7 @@ export default function CabangRsPage() {
             <div className="lg:col-span-4 space-y-3">
               <p className="text-xs font-semibold text-[#154C96] px-1">
                 {lang === "id"
-                  ? "Pilih Unit Rumah Sakit (5 Cabang):"
+                  ? "Pilih Unit Rumah Sakit (5 Member RS):"
                   : "Select Hospital Unit (5 Branches):"}
               </p>
               {BRANCHES.map((b) => {
@@ -182,7 +182,10 @@ export default function CabangRsPage() {
                 <div className="absolute bottom-4 left-5 right-5 flex flex-wrap items-end justify-between gap-4 text-white">
                   <div>
                     <p className="text-xs font-medium text-[#F69320]">
-                      {activeBranch.igdStatus[lang]}
+                      {activeBranch.igdStatus[lang]} •{" "}
+                      {lang === "id"
+                        ? "Member dari Avisena Healthcare Group"
+                        : "Member of Avisena Healthcare Group"}
                     </p>
                     <h3 className="text-2xl sm:text-3xl font-semibold mt-0.5">
                       {activeBranch.name}
@@ -323,7 +326,7 @@ export default function CabangRsPage() {
                     <FaStethoscope />
                     <span>
                       {lang === "id"
-                        ? `Lihat Dokter Cabang ${activeBranch.city}`
+                        ? `Lihat Dokter di ${activeBranch.city}`
                         : `View ${activeBranch.city} Doctors`}
                     </span>
                   </button>
@@ -344,13 +347,13 @@ export default function CabangRsPage() {
         </div>
       </section>
 
-      {/* 3. Tabel Perbandingan Kapasitas & Layanan 5 Cabang */}
+      {/* 3. Tabel Perbandingan Kapasitas & Layanan 5 Member */}
       <section className="py-16 lg:py-20 bg-[#E0E4E9]/45">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 space-y-8">
           <div className="max-w-2xl">
             <span className="inline-block px-3.5 py-1 rounded-full bg-[#154C96] text-white text-xs font-medium mb-2">
               {lang === "id"
-                ? "Perbandingan Antar Cabang"
+                ? "Perbandingan Antar Rumah Sakit"
                 : "Cross-Branch Comparison"}
             </span>
             <h2 className="text-2xl sm:text-3xl font-semibold text-[#10162C] text-balance">
@@ -365,7 +368,7 @@ export default function CabangRsPage() {
               <thead>
                 <tr className="bg-[#154C96] text-white text-xs font-medium">
                   <th className="py-4 px-5">
-                    {lang === "id" ? "Cabang RS" : "Hospital"}
+                    {lang === "id" ? "Unit Rumah Sakit" : "Hospital"}
                   </th>
                   <th className="py-4 px-5">Tipe</th>
                   <th className="py-4 px-5">IGD & Ambulans</th>
@@ -415,7 +418,7 @@ export default function CabangRsPage() {
               </h3>
               <p className="text-xs sm:text-sm font-normal text-[#10162C]/75 leading-relaxed text-pretty">
                 {lang === "id"
-                  ? "Seluruh 5 cabang RS Avisena melayani rujukan berjenjang Mobile JKN maupun kasus gawat darurat (IGD 24 Jam) tanpa rujukan sesuai ketentuan BPJS."
+                  ? "Seluruh 5 rumah sakit member Avisena melayani rujukan berjenjang Mobile JKN maupun kasus gawat darurat (IGD 24 Jam) tanpa rujukan sesuai ketentuan BPJS."
                   : "All 5 Avisena hospitals accept Mobile JKN referrals and 24/7 emergency walk-ins without referral letters."}
               </p>
             </div>

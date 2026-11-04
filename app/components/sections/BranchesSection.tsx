@@ -37,7 +37,7 @@ export const BranchesSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl font-semibold text-[#10162C] leading-tight">
             {lang === "id"
-              ? "Sehat Lebih Dekat di 5 Cabang Rumah Sakit Avisena"
+              ? "Sehat Lebih Dekat di 5 Member Rumah Sakit Avisena"
               : "Quality Healthcare Closer to You Across 5 Hospitals"}
           </h2>
           <p className="text-sm sm:text-base font-normal text-[#10162C]/80 mt-3 leading-relaxed">
@@ -122,6 +122,11 @@ export const BranchesSection: React.FC = () => {
                       </span>
                     </div>
 
+                    <p className="text-xs font-medium text-[#154C96] mb-0.5">
+                      {lang === "id"
+                        ? "Member dari Avisena Healthcare Group"
+                        : "Member of Avisena Healthcare Group"}
+                    </p>
                     <h3 className="text-xl font-semibold text-[#10162C]">
                       {branch.name}
                     </h3>

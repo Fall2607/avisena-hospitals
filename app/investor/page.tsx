@@ -274,7 +274,7 @@ export default function InvestorPage() {
             >
               <span>
                 {lang === "id"
-                  ? "Lihat Fasilitas Klinis Tiap Cabang"
+                  ? "Lihat Fasilitas Tiap Rumah Sakit"
                   : "View Clinical Facilities by Branch"}
               </span>
               <FaArrowUpRightFromSquare className="text-xs" />
@@ -416,7 +416,7 @@ export default function InvestorPage() {
                 },
                 {
                   title: {
-                    id: "Ikhtisar Ekspansi 5 Cabang RS Avisena Jawa Barat",
+                    id: "Ikhtisar Ekspansi 5 Rumah Sakit Avisena Jawa Barat",
                     en: "5-Hospital West Java Network Expansion Fact Sheet",
                   },
                   meta: "PDF • 2.5 MB • Portofolio RS",

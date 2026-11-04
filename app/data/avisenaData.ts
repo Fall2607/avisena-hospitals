@@ -292,7 +292,7 @@ export const BENTO_SERVICES: BentoServiceItem[] = [
       en: "Make / Change / Cancel Appointment",
     },
     subtitle: {
-      id: "Pilih cabang rumah sakit, poliklinik, dan jadwal dokter tanpa harus antre dari pagi.",
+      id: "Pilih rumah sakit, poliklinik, dan jadwal dokter tanpa harus antre dari pagi.",
       en: "Select your preferred Avisena branch, specialty clinic, and doctor schedule effortlessly.",
     },
     tag: { id: "Akses Cepat #1", en: "Quick Access #1" },
@@ -940,7 +940,7 @@ export const LEADERSHIP_TEAM: LeaderProfile[] = [
     },
     photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=80",
   },
-  // Tab 2: Kepala Cabang 5 RS
+  // Tab 2: Direktur 5 Member RS
   {
     id: "dir-cimahi",
     tab: "directors",

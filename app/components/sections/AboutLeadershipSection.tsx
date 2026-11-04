@@ -253,7 +253,7 @@ export const AboutLeadershipSection: React.FC = () => {
               {
                 key: "directors",
                 label: {
-                  id: "Direktur 5 Cabang RS",
+                  id: "Direktur 5 Member RS",
                   en: "Hospital Directors",
                 },
               },

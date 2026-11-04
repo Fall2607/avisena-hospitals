@@ -111,7 +111,7 @@ export const HeroSection: React.FC = () => {
               >
                 <FaHospital />
                 <span>
-                  {lang === "id" ? "Lihat 5 Cabang RS" : "Explore 5 Hospitals"}
+                  {lang === "id" ? "Lihat 5 Member RS" : "Explore 5 Hospitals"}
                 </span>
               </Link>
             </div>
@@ -189,7 +189,7 @@ export const HeroSection: React.FC = () => {
               <span className="w-2.5 h-2.5 rounded-full bg-[#00A79C]" />
               <h2 className="text-base sm:text-lg font-semibold text-[#10162C]">
                 {lang === "id"
-                  ? "Cari Jadwal Dokter & Buat Janji di 5 Cabang RS"
+                  ? "Cari Jadwal Dokter & Buat Janji Temu"
                   : "Find Doctors & Book Appointments Across 5 Hospitals"}
               </h2>
             </div>
@@ -204,7 +204,7 @@ export const HeroSection: React.FC = () => {
             onSubmit={handleHeroQuickSearch}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3.5 sm:gap-4 items-end w-full min-w-0"
           >
-            {/* CustomSelect 1: Lokasi Cabang RS */}
+            {/* CustomSelect 1: Lokasi Member RS */}
             <div className="w-full min-w-0 lg:col-span-5">
               <CustomSelect
                 label={

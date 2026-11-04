@@ -74,7 +74,7 @@ export const SpecialtiesSection: React.FC = () => {
               </h2>
               <p className="text-sm sm:text-base font-normal text-[#10162C]/75 mt-2">
                 {lang === "id"
-                  ? "Temukan poliklinik spesialis dan fasilitas penunjang di 5 cabang RS Avisena."
+                  ? "Temukan poliklinik spesialis dan fasilitas penunjang di seluruh cabang RS Avisena."
                   : "Find specialist clinics and diagnostic support across 5 Avisena hospitals."}
               </p>
             </div>
@@ -224,7 +224,7 @@ export const SpecialtiesSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Row 2: Pencarian Keluhan + Filter Ketersediaan Cabang RS */}
+            {/* Row 2: Pencarian Keluhan + Filter Ketersediaan Member RS */}
             <div className="pt-4 bg-[#E0E4E9]/20 p-4 rounded-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-4 w-full min-w-0">
               {/* Search Input */}
               <div className="flex-1 w-full min-w-0 space-y-2.5">

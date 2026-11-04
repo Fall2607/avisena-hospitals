@@ -129,7 +129,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
         value: "all",
         label:
           lang === "id"
-            ? "Semua Cabang RS Avisena"
+            ? "Semua Member RS Avisena"
             : "All Avisena Hospital Branches",
         sublabel:
           lang === "id"
@@ -309,7 +309,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                   {lang === "id" ? "Beranda" : "Home"}
                 </Link>
 
-                {/* Dropdown Cabang RS + Link to /cabang-rs */}
+                {/* Dropdown Member RS + Link to /cabang-rs */}
                 <div
                   className="relative"
                   onMouseEnter={() => setBranchDropdownOpen(true)}
@@ -324,7 +324,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                         : "hover:text-[#00A79C]"
                     }`}
                   >
-                    <span>{lang === "id" ? "Cabang RS" : "Hospitals"}</span>
+                    <span>{lang === "id" ? "Member RS" : "Member Hospitals"}</span>
                     <motion.span
                       animate={{ rotate: branchDropdownOpen ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
@@ -349,7 +349,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                       >
                         <div className="px-3 py-1.5 text-xs font-semibold text-[#154C96]">
                           {lang === "id"
-                            ? "Pilih 5 Cabang RS Avisena"
+                            ? "Jaringan Member RS Avisena"
                             : "Select 5 Avisena Hospitals"}
                         </div>
                         {BRANCHES.map((b) => (
@@ -382,7 +382,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                             className="block text-center text-xs font-medium text-[#00A79C] hover:text-[#154C96] py-1.5"
                           >
                             {lang === "id"
-                              ? "Buka Halaman 5 Cabang RS \u2192"
+                              ? "Buka Halaman Member RS \u2192"
                               : "Open 5 Hospital Branches Page \u2192"}
                           </Link>
                         </div>
@@ -470,7 +470,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                           : "bg-[#E0E4E9]/40"
                       }`}
                     >
-                      {lang === "id" ? "5 Cabang RS" : "5 Hospitals"}
+                      {lang === "id" ? "5 Member RS" : "5 Member Hospitals"}
                     </Link>
                     {navItems.slice(1).map((item) => (
                       <Link
@@ -594,11 +594,11 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                 </ul>
               </div>
 
-              {/* Col 3: Tautan Cepat 5 Cabang RS */}
+              {/* Col 3: Tautan Cepat 5 Jaringan Member RS Avisena */}
               <div className="lg:col-span-4 space-y-3">
                 <h3 className="text-base font-semibold text-white mb-3">
                   {lang === "id"
-                    ? "Tautan Cepat 5 Jaringan Cabang"
+                    ? "Jaringan Member RS Avisena"
                     : "Quick Links to Our 5 Hospitals"}
                 </h3>
                 <ul className="space-y-2 text-xs sm:text-sm">
