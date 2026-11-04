@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { createContext, useContext, useState, useMemo } from "react";
 import Link from "next/link";
@@ -133,7 +133,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
             : "All Avisena Hospital Branches",
         sublabel:
           lang === "id"
-            ? "Cimahi â€¢ Pangalengan â€¢ Kuningan â€¢ Subang â€¢ Cikampek"
+            ? "Cimahi \u2022 Pangalengan \u2022 Kuningan \u2022 Subang \u2022 Cikampek"
             : "5 Hospitals across West Java",
         badge: "5 RS",
         icon: <FaHospital />,
@@ -141,7 +141,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
       ...BRANCHES.map((b) => ({
         value: b.id,
         label: b.name,
-        sublabel: `${b.badge[lang]} â€¢ IGD ${b.phone}`,
+        sublabel: `${b.badge[lang]} \u2022 IGD ${b.phone}`,
         badge: b.type,
         icon: <FaLocationDot />,
       })),
@@ -247,8 +247,8 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
               <div className="flex items-center gap-3 shrink-0">
                 <span className="hidden lg:inline text-white/75 text-[11px] font-light">
                   {lang === "id"
-                    ? "Umum â€¢ BPJS/JKN â€¢ 50+ Asuransi"
-                    : "General â€¢ BPJS/JKN â€¢ 50+ Insurers"}
+                    ? "Umum \u2022 BPJS/JKN \u2022 50+ Asuransi"
+                    : "General \u2022 BPJS/JKN \u2022 50+ Insurers"}
                 </span>
 
                 {/* Bilingual Switcher */}
@@ -367,7 +367,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                                 {b.name}
                               </p>
                               <p className="text-[11px] font-light text-[#10162C]/65">
-                                {b.badge[lang]} â€¢ {b.type}
+                                {b.badge[lang]} \u2022 {b.type}
                               </p>
                             </div>
                             <span className="w-7 h-7 rounded-full bg-[#E0E4E9]/70 group-hover:bg-[#F69320] text-[#10162C] group-hover:text-white flex items-center justify-center text-xs transition-colors shrink-0">
@@ -382,8 +382,8 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                             className="block text-center text-xs font-medium text-[#00A79C] hover:text-[#154C96] py-1.5"
                           >
                             {lang === "id"
-                              ? "Buka Halaman 5 Cabang RS â†’"
-                              : "Open 5 Hospital Branches Page â†’"}
+                              ? "Buka Halaman 5 Cabang RS \u2192"
+                              : "Open 5 Hospital Branches Page \u2192"}
                           </Link>
                         </div>
                       </motion.div>
@@ -517,7 +517,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                 </div>
 
                 <p className="text-sm font-medium text-[#F69320]">
-                  â€œAvisena, Tetangga Sehatmu â€¢ Melayani dengan Sepenuh Hatiâ€
+                  “Avisena, Tetangga Sehatmu • Melayani dengan Sepenuh Hati”
                 </p>
 
                 <p className="text-xs sm:text-sm font-light text-white/80 leading-relaxed">
@@ -613,7 +613,7 @@ export const AvisenaProvider: React.FC<{ children: React.ReactNode }> = ({
                           {b.name} ({b.type})
                         </span>
                         <span className="text-[11px] font-light text-white/65">
-                          {b.phone} â†’
+                          {b.phone} →
                         </span>
                       </button>
                     </li>
