@@ -110,3 +110,4 @@ Sistem desain resmi Avisena Healthcare Group dirancang untuk menghadirkan atmosf
 - **Jangan gunakan dekorasi kaca buram (`backdrop-blur`) berlebihan di section statis.**
 - **Jangan gunakan nomor urut dekoratif (01, 02, 03) kecuali urutan langkah kronologis nyata.**
 - **Jangan gunakan emoji sebagai pengganti ikon medis.**
+

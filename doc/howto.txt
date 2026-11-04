@@ -1,0 +1,9 @@
+# 1. Clone repository ke temporary folder
+git clone https://github.com/pbakaus/impeccable.git "$env:TEMP\impeccable-repo"
+
+# 2. Salin folder skill ke project Anda
+Copy-Item -Path "$env:TEMP\impeccable-repo\.agents\skills\impeccable" -Destination ".agents\skills\impeccable" -Recurse -Force
+
+# 3. Jalankan linter atau detektor
+& ".agents\skills\impeccable\scripts\impeccable.cmd" detect app/
+& ".agents\skills\impeccable\scripts\impeccable.cmd" detect http://localhost:3000

@@ -43,3 +43,4 @@ Avisena Healthcare Group adalah portal jaringan rumah sakit dan profil korporat 
 - **Warna Resmi:** Tosca `#00A79C`, Blue `#154C96`, Orange `#F69320`, Dark Navy `#10162C`, Light Grey `#E0E4E9`, Grey `#B2B5B3`, White `#FFFFFF`.
 - **Bentuk:** Tidak ada sudut tajam 0px. Selalu gunakan `rounded-xl` (12px), `rounded-2xl` (16px), `rounded-3xl` (24px), `rounded-full`, atau `.simpul-frame`.
 - **Integritas Logo:** Logo tidak boleh didistorsi atau diberi drop shadow/outline. Wajib versi putih jika ditaruh di background berwarna pekat.
+
